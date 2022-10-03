@@ -1,0 +1,90 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 3 oct. 2022, 11:38:14
+    Author     : sio2
+*/
+
+
+.bg-normanzik, .list-group, .list-group-flush, .list-group-item {
+  --bs-bg-opacity: 1;
+  color: #7B4A40;
+  background-color: #FAF1E8;
+}
+
+
+
+.table-normanzik {
+  --bs-table-color: #7B4A40;
+  --bs-table-bg: #FAF1E8;
+  --bs-table-border-color: white;
+  --bs-table-striped-bg: #c5d7f2;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #FAF1E8;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #FAF1E8;
+  --bs-table-hover-color: #000;
+  color: var(--bs-table-color);
+  border-color: var(--bs-table-border-color);
+}
+.table-curved {
+   border-collapse: separate;
+   border: solid #ccc 1px;
+   border-radius: 6px;
+   border-left: 0px;
+   border-top: 0px;
+}
+.table-curved > thead:first-child > tr:first-child > th {
+    border-bottom: 0px;
+    border-top: solid #ccc 1px;
+}
+.table-curved td, .table-curved th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+.table-curved > :first-child > :first-child > :first-child {
+    border-radius: 6px 0 0 0;
+}
+.table-curved > :first-child > :first-child > :last-child {
+    border-radius: 0 6px 0 0;
+}
+.table-curved > :last-child > :last-child > :first-child {
+    border-radius: 0 0 0 6px;
+}
+.table-curved > :last-child > :last-child > :last-child {
+    border-radius: 0 0 6px 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body{
+    background-color: #D9D9D9;
+}
+
+a{
+    text-decoration-color: #c99b6d;
+    color: #A34A40;
+}
+
+.btn-normanzik {
+  --bs-btn-color: #7B4A40;
+  --bs-btn-bg: #FAF1E8;
+  --bs-btn-border-color: #fce3ca;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #c99b6d;
+  --bs-btn-hover-border-color: #c99b6d;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #c99b6d;
+  --bs-btn-active-border-color: #c99b6d;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #c99b6d;
+  --bs-btn-disabled-border-color: #c99b6d;
+}
+

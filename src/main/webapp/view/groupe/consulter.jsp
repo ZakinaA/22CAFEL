@@ -7,7 +7,8 @@
 <html>
 <head>
     <title>WebZik</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="../css/custom.css" rel="stylesheet">
 </head>
 <body>
     <%
@@ -21,7 +22,7 @@
 <div class="container">
   <div class="row">
       <div class="col-sm">
-            <div class="card">
+            <div class="card bg-normanzik">
                 <div class="card-header">
                     <b>Informations groupe :</b>
                 </div>
@@ -38,11 +39,11 @@
             </div>
         </div>
             <div class="col-sm">
-                <div class="card">
+                <div class="card bg-normanzik">
                     <div class="card-header">
                     <b>Membres :</b>
                     </div>
-                    <table class="table">
+                    <table class="table bg-normanzik">
                         <thead>
                             <tr>
                             <th>Id</th>
@@ -60,7 +61,7 @@
                             out.println("</td>");
                     
                             out.println("<td>");
-                            out.println("<a href ='../ServletMembre/consulter?idMembre=" + unMembre.getId() + "'>");
+                            out.println("&#128279 <a href ='../ServletMembre/consulter?idMembre=" + unMembre.getId() + "'>");
                             out.println(unMembre.getNom());
                             out.println("</a></td>");
                     
@@ -82,10 +83,11 @@
             
 <br>            
 
-        <%
-        out.println("</br> </br><b>Les titres du groupe : </b>");
-        %>
-        <table class="table">
+        <div class="card bg-normanzik">
+                    <div class="card-header">
+                    <b>Les titres du groupes :</b>
+                    </div>
+        <table class="table bg-normanzik">
         <thead>
         <tr>
             <th>Numéro</th>
@@ -111,9 +113,11 @@
         </tr>
         </tbody>
         </table>
+        </div>
+        <br>
         
 <a href="http://localhost:8080/normanzik/ServletGroupe/lister">
-    <button type="button" class="btn btn-primary">Retour</button>
+    <button type="button" class="btn btn-normanzik">Retour</button>
 </a>
         
 </div>
