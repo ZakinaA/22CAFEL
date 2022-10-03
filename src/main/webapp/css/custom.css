@@ -9,22 +9,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 
 .bg-normanzik, .list-group, .list-group-flush, .list-group-item {
-  --bs-bg-opacity: 1;
-  color: #7B4A40;
-  background-color: #FAF1E8;
+  --bs-bg-opacity: 0.9;
+  background-color: rgba(255,255,255,0.9);
+  color: #3a2866;
 }
 
-
+body{
+    
+  background-image: url("../img/img.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 
 .table-normanzik {
-  --bs-table-color: #7B4A40;
-  --bs-table-bg: #FAF1E8;
+  --bs-table-color: #584094;
+  --bs-table-bg: rgba(255,255,255,0.9);
   --bs-table-border-color: white;
   --bs-table-striped-bg: #c5d7f2;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #FAF1E8;
+  --bs-table-active-bg: rgba(255,255,255,0.9);
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #FAF1E8;
+  --bs-table-hover-bg: rgba(255,255,255,0.9);;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -67,13 +72,13 @@ body{
 }
 
 a{
-    text-decoration-color: #c99b6d;
-    color: #A34A40;
+    text-decoration-color: #3a2866;
+    color: #3a2866;
 }
 
 .btn-normanzik {
-  --bs-btn-color: #7B4A40;
-  --bs-btn-bg: #FAF1E8;
+  --bs-btn-color: #584094;
+  --bs-btn-bg: rgba(255,255,255,0.9);
   --bs-btn-border-color: #fce3ca;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #c99b6d;
