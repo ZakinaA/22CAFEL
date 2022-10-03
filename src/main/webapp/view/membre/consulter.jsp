@@ -11,28 +11,38 @@
 <html>
 <head>
     <title>WebZik</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
-<h1>Consulter Membre</h1>
+<div class="container px-4 px-lg-5">
+<h1 style="text-align: center;">Consulter Membre :</h1>
 <br/>
 
-<%
+<div class="container">
+  <div class="row">
+      <div class="col-sm">
+                <%
     Membre leMembre = (Membre)request.getAttribute("pMembre");
 %>
-<%
-out.println("<b>Nom : </b>" + leMembre.getNom() + "</br>");
-out.println("<b>Prénom : </b>" + leMembre.getPrenom() + "</br>");
-out.println("<b>Instrument principal : </b>" + leMembre.getUnInstrument().getLibelle() + "</br>");
-out.println("<b>Statut : </b>" + leMembre.getUnStatut().getLibelle() + "</br>");
+<div class="card">
+                <div class="card-header">
+                    <b>Informations membre :</b>
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item"><% out.println("<b>Nom : </b>" + leMembre.getNom() + "</br>");%></li>
+                <li class="list-group-item"><% out.println("<b>Prénom : </b>" + leMembre.getPrenom() + "</br>");%></li>
+                <li class="list-group-item"><% out.println("<b>Instrument principal : </b>" + leMembre.getUnInstrument().getLibelle() + "</br>");%></li>
+                </ul>
+            </div>
+                
+                    
+                </ul>
+            </div>
+      </div>
+  </div>
 
-out.println("<b>Les groupes du membre : </b>");
-
-/*for (int i=0; i<leMembre.getLesGroupes().size(); i++) {
-    Groupe unGroupe = leMembre.getLesGroupes().get(i);
-    out.println(unGroupe.getNom());
-    }*/
-%>
-
-
+<br>
+<input class="btn btn-primary" type="button" value="Retour" onclick="history.back()">
+</div>
 </body>
 </html>
