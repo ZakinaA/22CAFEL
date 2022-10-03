@@ -4,12 +4,10 @@
 <%@ page import="form.FormGroupe" %>
 <%@ page import="model.Genre" %>
 <%@ page import="java.util.ArrayList" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>WebZik</title>
-</head>
-<body>
+<%@ include file="/view/entete.jsp" %>
+
+
+
 <h1>Ajouter Groupe</h1>
 <br/>
 
