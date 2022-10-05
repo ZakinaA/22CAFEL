@@ -4,15 +4,15 @@
 <style>
     .header{
         background-color: rgba(255,255,255,0.9);
-        margin-top: -25px;
+        margin-top: 0px;
         margin-left: -20px;
-        margin-right: -20px;
+        margin-right: -10px;
 }
     
     .imgen{
         position: relative;
         left: 96%;
-        top: -50px;
+        top: -35px;
         height: 25px;
         
     }
@@ -25,7 +25,7 @@
     
     .entete{
         width:100%;
-        margin-top: -50px;
+        margin-top: -40px;
     }
     .entete td{
         text-align : center;
