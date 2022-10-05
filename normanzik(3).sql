@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3307
--- Généré le : lun. 03 oct. 2022 à 12:07
+-- Généré le : lun. 03 oct. 2022 à 12:46
 -- Version du serveur :  10.4.13-MariaDB
 -- Version de PHP : 7.3.21
 
@@ -91,6 +91,47 @@ INSERT INTO `dispositif` (`dis_id`, `dis_annee`, `dis_libelle`) VALUES
 (2, 2022, 'NorZik22'),
 (3, 2023, 'NorZik23'),
 (5, 2024, 'NorZik24');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `festival`
+--
+
+DROP TABLE IF EXISTS `festival`;
+CREATE TABLE IF NOT EXISTS `festival` (
+  `fest_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fest_nom` varchar(30) DEFAULT NULL,
+  `fest_dateDebut` date DEFAULT NULL,
+  `fest_dateFin` date DEFAULT NULL,
+  `fest_lieu` varchar(30) NOT NULL,
+  PRIMARY KEY (`fest_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `festival`
+--
+
+INSERT INTO `festival` (`fest_id`, `fest_nom`, `fest_dateDebut`, `fest_dateFin`, `fest_lieu`) VALUES
+(1, 'Beauregard', '2023-07-06', '2023-07-09', 'Hérouville Saint Clair'),
+(2, 'Jazz sous les pommiers', '2023-05-13', '2023-05-20', 'Coutances'),
+(3, 'Papillons de nuit', '2023-05-26', '2023-05-28', 'Saint Laurent de Cuves');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `festivalgroupe`
+--
+
+DROP TABLE IF EXISTS `festivalgroupe`;
+CREATE TABLE IF NOT EXISTS `festivalgroupe` (
+  `fest_id` int(11) NOT NULL,
+  `gpe_id` int(11) NOT NULL,
+  `passage_date` date NOT NULL,
+  `passage_heure` time NOT NULL,
+  PRIMARY KEY (`fest_id`,`gpe_id`),
+  KEY `FK_FESTIVALGROUPE_GROUPE` (`gpe_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -438,6 +479,13 @@ INSERT INTO `utilisateur` (`uti_identifiant`, `uti_mdp`, `uti_idRole`) VALUES
 ALTER TABLE `concert`
   ADD CONSTRAINT `FK_CONCERT_GROUPE` FOREIGN KEY (`con_idGroupe`) REFERENCES `groupe` (`gpe_id`),
   ADD CONSTRAINT `FK_CONCERT_LIEU` FOREIGN KEY (`con_idLieu`) REFERENCES `lieu` (`lieu_id`);
+
+--
+-- Contraintes pour la table `festivalgroupe`
+--
+ALTER TABLE `festivalgroupe`
+  ADD CONSTRAINT `FK_FESTIVALGROUPE_FESTIVAL` FOREIGN KEY (`fest_id`) REFERENCES `festival` (`fest_id`),
+  ADD CONSTRAINT `FK_FESTIVALGROUPE_GROUPE` FOREIGN KEY (`gpe_id`) REFERENCES `groupe` (`gpe_id`);
 
 --
 -- Contraintes pour la table `groupe`
