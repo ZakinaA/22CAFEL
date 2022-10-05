@@ -3,6 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page import="model.Dispositif"%>
+<%@include file="../entete.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>

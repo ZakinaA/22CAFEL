@@ -3,7 +3,7 @@
 
 <style>
     .header{
-        background-color: rgba(255,255,255,0.9);
+        background-color: rgba(255,255,255,0.75);
         margin-top: 0px;
         margin-left: -20px;
         margin-right: -10px;
@@ -12,20 +12,25 @@
     .imgen{
         position: relative;
         left: 96%;
-        top: -35px;
-        height: 25px;
+        top: -45px;
+        height: 30px;
         
     }
     
     .tn{
         text-align:center;
         color: #5e3f9c;
-        font-size: 200%;
+        font-size: 2%;
+        text-decoration: none;
+    }
+    .tn:hover{
+        color: white;
+        transition: 0.8s all;
     }
     
     .entete{
         width:100%;
-        margin-top: -40px;
+        margin-top: -35px;
     }
     .entete td{
         text-align : center;
@@ -45,9 +50,9 @@
 </style>
 <body>
     <header class="header">
-            <h1 class="tn">Norman'Zik</h1>
+        <a class="tn" href="../index.html"><h1>Norman'Zik</h1></a>
               
-            <a href="#"><img class="imgen" href="#" src="../view/img/img_entete.png"></a> 
+            <a href="#"><img class="imgen" src="../view/img/img_entete.png"></a> 
    
             
             

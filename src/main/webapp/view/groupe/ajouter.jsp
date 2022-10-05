@@ -4,6 +4,7 @@
 <%@ page import="form.FormGroupe" %>
 <%@ page import="model.Genre" %>
 <%@ page import="java.util.ArrayList" %>
+<%@include file="../entete.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>

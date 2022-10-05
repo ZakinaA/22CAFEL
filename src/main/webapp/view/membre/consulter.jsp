@@ -7,6 +7,7 @@
 <%@page import="model.Groupe"%>
 <%@page import="model.Membre"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="../entete.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
