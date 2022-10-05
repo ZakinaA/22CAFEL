@@ -6,7 +6,6 @@
 
 <%@page import="model.Groupe"%>
 <%@page import="model.Membre"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="../entete.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -18,7 +17,6 @@
 </head>
 <body>
 <div class="container px-4 px-lg-5">
-<h1 style="text-align: center;">Consulter Membre :</h1>
 <br/>
 
 <div class="container">
@@ -33,7 +31,7 @@
                 </div>
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item"><% out.println("<b>Nom : </b>" + leMembre.getNom() + "</br>");%></li>
-                <li class="list-group-item"><% out.println("<b>PrÃ©nom : </b>" + leMembre.getPrenom() + "</br>");%></li>
+                <li class="list-group-item"><% out.println("<b>Prénom : </b>" + leMembre.getPrenom() + "</br>");%></li>
                 <li class="list-group-item"><% out.println("<b>Instrument principal : </b>" + leMembre.getUnInstrument().getLibelle() + "</br>");%></li>
                 </ul>
 </div>

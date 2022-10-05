@@ -16,7 +16,6 @@
     Groupe unGroupe = (Groupe)request.getAttribute("pGroupe");
 %>
 <div class="container px-4 px-lg-5">
-<h1 style="text-align: center;">Consulter Groupe :</h1>
 <br/>
 
 

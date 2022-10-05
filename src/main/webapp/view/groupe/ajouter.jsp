@@ -4,7 +4,7 @@
 <%@ page import="form.FormGroupe" %>
 <%@ page import="model.Genre" %>
 <%@ page import="java.util.ArrayList" %>
-<%@include file="../entete.jsp" %>
+<%@include file="../entete.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +13,7 @@
     <link href="../css/custom.css" rel="stylesheet">
     </head>
 <body>
-<div class="container px-4 px-lg-5">    
-<h1>Ajouter Groupe</h1>
+<div class="container px-4 px-lg-5">
 <br/>
 
 
@@ -22,44 +21,37 @@
     //Client client=(Client)request.getAttribute("client");
     FormGroupe form = (FormGroupe)request.getAttribute("form");
 %>
-
+<div class="card bg-normanzik">
+                    <div class="card-header">
+                    <b>Ajouter groupe :</b>
+                    </div>
 <form class="form-inline" action="ajouter" method="POST">
-    <label for="nom">Nom : </label>
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item">Nom :
     <input id="nom" type="text" name="nom"  size="70" maxlength="70">
-    <span style="color: blue;">${form.erreurs['nom']}</span>
-    <br />
-    </br>
-    </br>
-    <label for="dateCreation">Date de création : </label>
-    <input id="dateCreation"  type="date"  name="dateCreation" size="10" maxlength="10">
-    <span style="color: blue;">${form.erreurs['dateCreation']}</span>
-    </br>
+    <span style="color: blue;">${form.erreurs['nom']}</span></li>
     
-    </br>
-    </br>
-    <label for="telephone">Telephone : </label>
+    <li class="list-group-item"> Date de création : 
+    <input id="dateCreation"  type="date"  name="dateCreation" size="10" maxlength="10">
+    <span style="color: blue;">${form.erreurs['dateCreation']}</span>        
+    </li>
+    
+    <li class="list-group-item">Telephone :
     <input id="telephone"  type="text"  name="telephone" size="10" maxlength="12">
     <span style="color: blue;">${form.erreurs['telephone']}</span>
-    </br>
+    </li>
     
-    </br>
-    </br>
-    <label for="siteWeb">Site Web : </label>
+    <li class="list-group-item"> Site Web :
     <input id="siteWeb"  type="text"  name="siteWeb" size="70" maxlength="50">
     <span style="color: blue;">${form.erreurs['siteWeb']}</span>
-    </br>
+    </li>
     
-    </br>
-    </br>
-    <label for="mail">Mail : </label>
+    <li class="list-group-item"> Mail :
     <input id="mail"  type="text"  name="mail" size="70" maxlength="70">
     <span style="color: blue;">${form.erreurs['mail']}</span>
-    </br>
+    </li>
     
-    </br>
-    </br>
-    <%-- Champ Liste des genres --%>
-    <label for="genre">Genre : </label>
+    <li class="list-group-item"> Mail : 
     <select name="idGenre">
         <%
             ArrayList<Genre> lesGenres = (ArrayList)request.getAttribute("pLesGenres");
@@ -68,12 +60,10 @@
                 out.println("<option value='" + g.getId()+"'>" + g.getLibelle()+"</option>" );
             }
         %>
-    </select>
+    </select>    
+    </li>
     
-    </br>
-    </br>
-    
-    <label for="dispositif">Dispositif : </label>
+    <li class="list-group-item"> Dispositif :
     <select name="idDispositif">
         <%
             ArrayList<Dispositif> lesDispositifs = (ArrayList)request.getAttribute("pLesDispositifs");
@@ -83,14 +73,17 @@
             }
         %>
     </select>
-    </br>
-    </br>
-    <input class="btn btn-primary" type="submit" name="valider" id="valider" value="Valider"/>
+    </li>
+    </ul> 
+</form>   
+</div>
+    
+    <br>
+    <input class="btn btn-normanzik" type="submit" name="valider" id="valider" value="Valider"/>
     
     <a href="http://localhost:8080/normanzik/ServletGroupe/lister">
-        <button type="button" class="btn btn-primary">Retour</button>
+        <button type="button" class="btn btn-normanzik">Retour</button>
     </a>
-</form>   
 </div>
 </body>
 </html>

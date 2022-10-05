@@ -10,8 +10,7 @@
     <link href="../css/custom.css" rel="stylesheet">
 </head>
 <body>
-<div class="container px-4 px-lg-5">
-<h1>Lister Groupe</h1>
+<div class="container px-4 px-lg-5 custom-container">
 <br/>
 
 
@@ -19,18 +18,15 @@
     ArrayList<Groupe> lesGroupes = (ArrayList)request.getAttribute("pLesGroupes");
 %>
 
-
+<div class="card bg-normanzik">
+                    <div class="card-header">
+                    <b>Les groupes :</b>
+                    </div>
     <table  class="table table-curved table-normanzik">
         <thead>
         <tr>
-            <th>Id</th>
             <th>Nom</th>
-            <th>dateCreation</th>
             <th>Genre</th>
-            <th>Téléphone</th>
-            <th>Mail</th>
-            <th>Site Web</th>
-            <th>Lieu de répétition</th>
             <th>Membre contact</th>
 
         </tr>
@@ -39,37 +35,14 @@
         <tr>
             <%
                 for (Groupe unGroupe : lesGroupes) {
-                    out.println("<tr><td>");
-                    out.println(unGroupe.getId());
-                    out.println("</td>");
-
+                    out.println("<tr>");
                     out.println("<td>");
                     out.println("&#128279 <a href ='../ServletGroupe/consulter?idGroupe=" + unGroupe.getId() + "'>");
                     out.println(unGroupe.getNom());
                     out.println("</a></td>");
 
                     out.println("<td>");
-                    out.println(unGroupe.getDateCreation());
-                    out.println("</td>");
-
-                    out.println("<td>");
                     out.println(unGroupe.getGenre().getLibelle());
-                    out.println("</td>");
-                    
-                    out.println("<td>");
-                    out.println(unGroupe.getTelephone());
-                    out.println("</td>");
-                    
-                    out.println("<td>");
-                    out.println(unGroupe.getMail());
-                    out.println("</td>");
-                    
-                    out.println("<td>");
-                    out.println(unGroupe.getSiteWeb());
-                    out.println("</td>");
-                    
-                    out.println("<td>");
-                    out.println(unGroupe.getLieuRepetition());
                     out.println("</td>");
                     
                     out.println("<td>");
@@ -84,7 +57,8 @@
         </tr>
     </tbody>
     </table>
-        
+</div>
+        <br>
     <a href="http://localhost:8080/normanzik/ServletGroupe/ajouter">
         <button type="button" class="btn btn-normanzik">S'inscrire</button>
     </a>
