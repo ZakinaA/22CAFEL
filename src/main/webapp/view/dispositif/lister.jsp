@@ -4,21 +4,19 @@
 <%@include file="../entete.jsp" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>WebZik</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head>
-<body>
-<div class="container px-4 px-lg-5">
-<h1>Lister Dispositif</h1>
-<br/>
 
+<div class="container px-4 px-lg-5 custom-container">
+<br/>
 
 <%
     ArrayList<Dispositif> lesDispositifs = (ArrayList)request.getAttribute("pLesDispositifs");
 %>
 
-    <table  class="table table-bordered table-striped table-condensed">
+    <div class="card bg-normanzik">
+                    <div class="card-header">
+                    <b>Les groupes :</b>
+                    </div>
+    <table  class="table table-curved table-normanzik">
         <thead>
         <tr>
             <th>Id</th>
