@@ -28,7 +28,7 @@ out.println("<b>Les membres du groupe : </b>");
         <tr>
             <th>Id</th>
             <th>Nom</th>
-            <th>Prenom</th>
+            <th>Selectionné</th>
         </tr>
         </thead>
         <tbody>
@@ -45,6 +45,11 @@ out.println("<b>Les membres du groupe : </b>");
                     out.println(unGroupe.getNom());
                     out.println("</a></td>");
                     
+                    out.println("<td>");
+                    if (unGroupe.getEstSelectionne()==1){
+                        out.println("<a href='../'>");
+                    }
+                    out.println("</a></td>");
                     
                 }
             %>

@@ -22,7 +22,7 @@
         <thead>
         <tr>
             <th>Id</th>
-            <th>Libell</th>
+            <th>Libellé</th>
 
         </tr>
         </thead>
