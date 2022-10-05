@@ -5,7 +5,6 @@
 <%@page import="model.Groupe"%>
 <%@include file="../entete.jsp" %>
 
-<body>
     <%
     Groupe unGroupe = (Groupe)request.getAttribute("pGroupe");
 %>
@@ -110,9 +109,8 @@
         </div>
         <br>
         
-<a href="http://localhost:8080/normanzik/ServletGroupe/lister">
-    <button type="button" class="btn btn-normanzik">Retour</button>
-</a>
+<button type="button" class="btn btn-normanzik" onclick = "history.back()">Retour</button>
+
         
 </div>
 </body>
