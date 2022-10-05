@@ -5,7 +5,7 @@
 <%@ page import="model.Genre" %>
 <%@ page import="java.util.ArrayList" %>
 <%@include file="../entete.jsp"%>
-
+<html>
 <div class="container px-4 px-lg-5">
 <br/>
 

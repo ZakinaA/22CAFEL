@@ -5,7 +5,7 @@
 <%@ page import="model.Instrument" %>
 <%@ page import="java.util.ArrayList" %>
 <%@include file="../entete.jsp" %>
-
+<html>
 <h1>Ajouter Membre</h1>
 <br/>
 

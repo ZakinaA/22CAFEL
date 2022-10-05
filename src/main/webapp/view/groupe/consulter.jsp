@@ -4,7 +4,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page import="model.Groupe"%>
 <%@include file="../entete.jsp" %>
-
+<html>
     <%
     Groupe unGroupe = (Groupe)request.getAttribute("pGroupe");
 %>

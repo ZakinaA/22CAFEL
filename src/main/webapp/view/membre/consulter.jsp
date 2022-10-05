@@ -7,7 +7,7 @@
 <%@page import="model.Groupe"%>
 <%@page import="model.Membre"%>
 <%@include file="../entete.jsp" %>
-
+<html>
 <div class="container px-4 px-lg-5">
 <br/>
 
