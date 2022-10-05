@@ -44,7 +44,7 @@
     <span style="color: blue;">${form.erreurs['mail']}</span>
     </li>
     
-    <li class="list-group-item"> Mail : 
+    <li class="list-group-item"> Genre : 
     <select name="idGenre">
         <%
             ArrayList<Genre> lesGenres = (ArrayList)request.getAttribute("pLesGenres");

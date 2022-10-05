@@ -82,10 +82,10 @@ a{
 .btn-normanzik {
   --bs-btn-color: #584094;
   --bs-btn-bg: rgba(255,255,255,0.9);
-  --bs-btn-border-color: #fce3ca;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #c99b6d;
-  --bs-btn-hover-border-color: #c99b6d;
+  --bs-btn-border-color: #E141E3;
+  --bs-btn-hover-color: #FFF;
+  --bs-btn-hover-bg: #3A2866;
+  --bs-btn-hover-border-color: #E141E3;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #c99b6d;

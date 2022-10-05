@@ -8,6 +8,7 @@ import static dao.DaoAdmin.requete;
 import static dao.DaoAdmin.rs;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import model.Concert;
 
 /**
@@ -55,5 +56,35 @@ public class DaoConcert {
             unConcert= null;
         }
         return unConcert ;
+    }
+
+public static ArrayList<Concert> getLesConcerts(Connection connection){
+        ArrayList<Concert> lesConcerts = new  ArrayList<Concert>();
+        try
+        {
+            //preparation de la requete
+            requete=connection.prepareStatement("select * from concert");
+            System.out.println("Requete" + requete);
+
+            //executer la requete
+            rs=requete.executeQuery();
+
+            //On hydrate l'objet métier Dispositif et sa relation Genre avec les résultats de la requête
+            while ( rs.next() ) {
+
+
+                Concert leConcert = new Concert();
+                leConcert.setId(rs.getInt("con_id"));
+                leConcert.setDate(rs.getString("con_date"));
+
+                lesConcerts.add(leConcert);
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+            //out.println("Erreur lors de l’établissement de la connexion");
+        }
+        return lesConcerts ;
     }
 }

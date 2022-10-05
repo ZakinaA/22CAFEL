@@ -51,6 +51,10 @@
         <servlet-name>ServletDispositif</servlet-name>
         <url-pattern>/ServletDispositif/consulter</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletConcert</servlet-name>
+        <url-pattern>/ServletConcert/lister</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
