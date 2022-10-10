@@ -96,10 +96,7 @@ public class ServletUtilisateur extends HttpServlet {
         // Affichage du membre selectionné (depuis la fonctionnalité inscription)
         if(url.equals("/normanzik/ServletUtilisateur/inscription")){
 
-            int idUtilisateur = Integer.parseInt(request.getParameter("idUtilisateur"));
-            Utilisateur lUtilisateur = DaoUtilisateur.getLutilisateur(connection, idUtilisateur);
-            request.setAttribute("pLesUtilisateur", lUtilisateur);
-            this.getServletContext().getRequestDispatcher("/view/utilisateur/inscription.jsp" ).forward( request, response );
+
         }
         
     }
@@ -119,19 +116,19 @@ public class ServletUtilisateur extends HttpServlet {
         FormUtilisateur form = new FormUtilisateur();
 
         /* Appel au traitement et à la validation de la requête, et récupération de l'objet en résultant */
-        Utilisateur lUtilisateurSaisi = form.ajouterUtilisateur(request);
+        Utilisateur leUtilisateurSaisi = form.ajouterUtilisateur(request);
 
         /* Stockage du formulaire et de l'objet dans l'objet request */
         request.setAttribute( "form", form );
-        request.setAttribute( "pUtilisateur", lUtilisateurSaisi );
+        request.setAttribute( "pUtilisateur", leUtilisateurSaisi );
 
         if (form.getErreurs().isEmpty()){
             // Il n'y a pas eu d'erreurs de saisie, donc on renvoie la vue affichant les infos du groupe
-            Utilisateur utilisateurAjoute = DaoUtilisateur.ajouterUtilisateur(connection, lUtilisateurSaisi);
+            Utilisateur utilisateurAjoute = DaoUtilisateur.ajouterUtilisateur(connection, leUtilisateurSaisi);
 
             if (utilisateurAjoute != null ){
-                Utilisateur lUtilisateur = DaoUtilisateur.getLutilisateur(connection, lUtilisateurSaisi.getUti_identifiant());
-                request.setAttribute("pUtilisateur", lUtilisateur);
+                Utilisateur leUtilisateur = DaoUtilisateur.getLeUtilisateur(connection, leUtilisateurSaisi.getUti_identifiant());
+                request.setAttribute("pUtilisateur", leUtilisateur);
                 this.getServletContext().getRequestDispatcher("/view/utilisateur/inscription.jsp" ).forward( request, response );
             }
             else
