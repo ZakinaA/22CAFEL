@@ -40,6 +40,8 @@
     </li>
     </ul>
     </div>
+    <br>
+    <button type="button" class="btn btn-normanzik" onclick = "">Se connecter</button>
 </form>    
 </body>
 </html>
