@@ -4,8 +4,10 @@
  */
 package test;
 
+import dao.DaoRoleUtilisateur;
 import dao.DaoUtilisateur;
 import java.sql.Connection;
+import model.RoleUtilisateur;
 import model.Utilisateur;
 
 /**
@@ -16,32 +18,30 @@ public class TestDaoUtilisateur {
      public static void main(String[] args) {
         Connection con = ConnexionBdd.ouvrirConnexion();
         
-        Utilisateur lUtilisateur = DaoUtilisateur.getLutilisateur(con, 1);
-        System.out.println("Utilisateur de l'id 1 " + lUtilisateur.getUti_identifiant() + ". Mot de passe de l'utilisateur : " + lUtilisateur.getUti_mdp());
+        /*Utilisateur leUtilisateur = DaoUtilisateur.getLeUtilisateur(con, 1);
+        System.out.println("Utilisateur de l'id 1 " + leUtilisateur.getUti_identifiant() + ". Mot de passe de l'utilisateur : " + leUtilisateur.getUti_mdp());
         
-        /*
-        ArrayList<Membre> lesMembres = getLesMembres(con);
-        for (int i=0; i<lesMembres.size(); i++){
-            Membre membre = lesMembres.get(i);
+        
+        ArrayList<Utilisateur> lesUtilisateurs = getLesUtilisateurs(con);
+        for (int i=0; i<lesUtilisateurs.size(); i++){
+            Utilisateur utilisateur = lesUtilisateurs.get(i);
             System.out.println("nom du membre : " + membre.getNom() + ". Instrument principal du membre : " + membre.getUnInstrument().getLibelle()
                 + " Statut du membre : " + membre.getUnStatut().getLibelle());
             
         }
         */
         
-        /*Membre mem = new Membre();
-        mem.setNom("HERMAN");
-        mem.setPrenom("Benjamin");
+        Utilisateur uti = new Utilisateur();
+        uti.setUti_identifiant("usertest");
+        uti.setUti_mdp("password");
         
-        Statut stat = new Statut();
-        stat.setId(1);
+        RoleUtilisateur roluti = new RoleUtilisateur();
+        roluti.setRoluti_id(4);
         
-        mem.setUnStatut(stat);
+        uti.setRoleUtilisateur(roluti);
         
-        Membre leMembreAInsere = DaoMembre.ajouterMembre(con, mem);*/
-        
-        
-        
+        Utilisateur leUtilisateurAInsere = DaoUtilisateur.ajouterUtilisateur(con, uti);
+               
         ConnexionBdd.fermerConnexion(con);
     }
 }
