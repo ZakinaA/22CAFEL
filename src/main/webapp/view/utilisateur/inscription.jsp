@@ -27,20 +27,31 @@
     <ul class="list-group list-group-flush">
     <li class="list-group-item">Identifiant :
     <input id="username" type="text" name="username" maxlength="70">
-    <span style="color: blue;">${form.erreurs['identifiant']}</span></li>
- 
+    <span style="color: blue;">${form.erreurs['identifiant']}</span>
+    </li>
+
+    
     <li class="list-group-item">Mot de passe :
     <input id="motDePasse"  type="password"  name="motDePasse" maxlength="20">
-    <span style="color: blue;">${form.erreurs['motdepasse']}</span></li>
+    <span style="color: blue;">${form.erreurs['motdepasse']}</span>
+    </li>
+ 
     
     <li class="list-group-item">Confirmation du Mot de passe :
     <input id="motDePasse"  type="password"  name="motDePasse" maxlength="20">
-    <span style="color: blue;">${form.erreurs['motdepasse']}</span></li>
+    <span style="color: blue;">${form.erreurs['motdepasse']}</span>
+    </li>
+    
+    
     <li class="list-group-item">
     <a href="http://localhost:8080/normanzik/ServletUtilisateur/connexion" class="card-link">Se Connecter</a>
     </li>
-    </ul>
-</form>    
+    </ul>   
+</form> 
 </div>
+    <br><input class="btn btn-normanzik" type="submit" name="valider" id="valider" value="Valider"/>
+    
+    <% inscription = "INSERT INTO utilisateur(uti_identifiant, uti_mdp, uti_idRole) VALUES ('" + username + "','" + motDePasse + "','" + motDePasse +")"; %>
+    
 </body>
 </html>
