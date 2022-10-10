@@ -98,6 +98,10 @@ public class ServletUtilisateur extends HttpServlet {
 
 
         }
+        if(url.equals("/normanzik/ServletUtilisateur/connexion")){
+
+
+        }
         
     }
 

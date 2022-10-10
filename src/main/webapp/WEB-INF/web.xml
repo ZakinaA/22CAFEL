@@ -19,6 +19,14 @@
         <servlet-name>ServletDispositif</servlet-name>
         <servlet-class>servlet.ServletDispositif</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletConcert</servlet-name>
+        <servlet-class>servlet.ServletConcert</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletUtilisateur</servlet-name>
+        <servlet-class>servlet.ServletUtilisateur</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletGroupe</servlet-name>
         <url-pattern>/ServletGroupe/consulter</url-pattern>
@@ -54,6 +62,10 @@
     <servlet-mapping>
         <servlet-name>ServletConcert</servlet-name>
         <url-pattern>/ServletConcert/lister</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletUtilisateur</servlet-name>
+        <url-pattern>/ServletUtilisateur/connexion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
