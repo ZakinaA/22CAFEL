@@ -17,6 +17,7 @@ public class Festival {
     private String fest_dateFin;
     private String fest_lieu;
     private ArrayList<Groupe> lesGroupes;
+    private Groupe groupe;
 
     public Festival() {
     }
@@ -67,6 +68,14 @@ public class Festival {
 
     public void setLesGroupes(ArrayList<Groupe> lesGroupes) {
         this.lesGroupes = lesGroupes;
+    }
+
+    public Groupe getGroupe() {
+        return groupe;
+    }
+
+    public void setGroupe(Groupe groupe) {
+        this.groupe = groupe;
     }
 
     
