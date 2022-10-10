@@ -23,7 +23,9 @@
                     <div class="card-header">
                     <b>Se connecter</b>
                     </div>
-<form class="form-inline" action="ajouter" method="POST">
+
+
+    <form class="form-inline" action="ajouter" method="POST">
     <ul class="list-group list-group-flush">
     <li class="list-group-item">Identifiant :
     <input id="nom" type="text" name="nom" maxlength="70">
@@ -33,8 +35,11 @@
     <input id="telephone"  type="text"  name="telephone" maxlength="20">
     <span style="color: blue;">${form.erreurs['motdepasse']}</span>
     </li>
-    </ul> 
+    <li class="list-group-item">
+    <a href="http://localhost:8080/normanzik/ServletUtilisateur/inscription" class="card-link">S'inscrire</a>
+    </li>
+    </ul>
+    </div>
 </form>    
-</div>
 </body>
 </html>
