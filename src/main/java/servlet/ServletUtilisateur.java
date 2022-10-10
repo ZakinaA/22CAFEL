@@ -99,8 +99,7 @@ public class ServletUtilisateur extends HttpServlet {
 
         }
         if(url.equals("/normanzik/ServletUtilisateur/connexion")){
-
-
+            this.getServletContext().getRequestDispatcher("/view/utilisateur/connexion.jsp" ).forward( request, response );
         }
         
     }

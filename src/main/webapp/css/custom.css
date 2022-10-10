@@ -97,5 +97,5 @@ a{
 }
 
 .custom-container{
-    width: 50%;
+    width: fit-content;
 }

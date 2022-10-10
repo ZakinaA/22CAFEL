@@ -6,9 +6,9 @@
 
 <%@page import="form.FormUtilisateur"%>
 <%@page import="form.FormMembre"%>
+<%@include file="../entete.jsp" %>
 <!DOCTYPE html>
 <html>
-<h1>Ajouter Membre</h1>
 <br/>
 
 
@@ -16,36 +16,25 @@
     //Client client=(Client)request.getAttribute("client");
     FormUtilisateur form = (FormUtilisateur)request.getAttribute("form");
 %>
-
-<form class="form-inline" action="ajouter" method="POST">
-    <label for="nom">Nom : </label>
-    <input id="nom" type="text" name="nom"  size="70" maxlength="70">
-    <span style="color: blue;">${form.erreurs['nom']}</span>
-    <br />
-    </br>
-    </br>
-    <label for="prenom">Prénom : </label>
-    <input id="prenom"  type="date"  name="prenom" size="10" maxlength="10">
-    <span style="color: blue;">${form.erreurs['prenom']}</span>
-    </br>
-    
-    </br>
-    </br>
-    <%-- Champ Liste des genres --%>
-    <label for="instrument">Instrument : </label>
-    <select name="idInstrument">
-    </select>
-    
-    </br>
-    </br>
-    
-    <label for="statut">Statut : </label>
-    <select name="idStatut">
-    </select>
-    </br>
-    </br>
-    <input type="submit" name="valider" id="valider" value="Valider"/>
-</form>
     <%@include file="../pied.jsp"%>
+
+<div class="container px-4 px-lg-5 custom-container">
+<div class="card bg-normanzik">
+                    <div class="card-header">
+                    <b>Se connecter</b>
+                    </div>
+<form class="form-inline" action="ajouter" method="POST">
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item">Identifiant :
+    <input id="nom" type="text" name="nom" maxlength="70">
+    <span style="color: blue;">${form.erreurs['identifiant']}</span></li>
+ 
+    <li class="list-group-item">Mot de passe :
+    <input id="telephone"  type="text"  name="telephone" maxlength="20">
+    <span style="color: blue;">${form.erreurs['motdepasse']}</span>
+    </li>
+    </ul> 
+</form>    
+</div>
 </body>
 </html>

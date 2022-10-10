@@ -58,7 +58,7 @@
     <header class="header">
         <a class="tn" href="../index.html"><h1>Norman'Zik</h1></a>
               
-            <a href="#"><img class="imgen" src="../img/img_entete.png"></a> 
+            <a href="http://localhost:8080/normanzik/ServletUtilisateur/connexion"><img class="imgen" src="../img/img_entete.png"></a> 
    
             
             
