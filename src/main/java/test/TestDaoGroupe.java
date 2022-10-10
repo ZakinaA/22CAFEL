@@ -39,7 +39,7 @@ public class TestDaoGroupe {
             System.out.println(leConcert.getDate() + " à " + leConcert.getLeLieu().getNomSalle()); 
         }*/
         
-        Groupe leGroupe = DaoGroupe.getLeGroupe(con, 1);
+        /*Groupe leGroupe = DaoGroupe.getLeGroupe(con, 1);
         System.out.println(leGroupe.getNom() + ". Membre contact du groupe: " + leGroupe.getLeMembreContact().getNom() + ". Titres du groupe : ");
         
         for (int i=0; i<leGroupe.getLesTitres().size(); i++){
@@ -61,7 +61,8 @@ public class TestDaoGroupe {
             System.out.println(unGroupe.getNom()); 
         }
         
-        */ArrayList<Groupe> lesGroupes = DaoGroupe.getLesGroupes(con);
+        */
+        /*ArrayList<Groupe> lesGroupes = DaoGroupe.getLesGroupes(con);
         for (int i=0; i<lesGroupes.size(); i++){
             Groupe grp = lesGroupes.get(i);
             System.out.println("nom du groupe : " + grp.getNom() + " membre contact du groupe " + grp.getLeMembreContact().getNom());
@@ -69,13 +70,21 @@ public class TestDaoGroupe {
             
         }
         
+        */
         /*
         ArrayList<Groupe> lesGroupesDisp2 = DaoGroupe.getLesGroupesByDispositif(con, 2);
         for (int i=0; i<lesGroupesDisp2.size(); i++){
             Groupe grp2 = lesGroupesDisp2.get(i);
             System.out.println("nom du groupe : " + grp2.getNom() + " genre du groupe " + grp2.getDispositif().getLibelle());
         }
+        */
         
+        ArrayList<Groupe> lesGroupesFest = DaoGroupe.getLesGroupesByFestival(con, 3);
+        for (int i=0; i<lesGroupesFest.size(); i++){
+            Groupe grpf = lesGroupesFest.get(i);
+            System.out.println("Le groupe " + grpf.getNom() + " participe au festival "+ grpf.getFestival().getFest_nom()  );
+            
+        /*
         Groupe gp = new Groupe();
         gp.setNom("Les flashs");
         gp.setDateCreation("2021-05-03");
@@ -87,10 +96,11 @@ public class TestDaoGroupe {
         
         Groupe leGroupeAInsere = DaoGroupe.ajouterGroupe(con, gp);*/
         
-        
+                    
         
         
         ConnexionBdd.fermerConnexion(con);
     }
     
+}
 }

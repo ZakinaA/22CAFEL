@@ -22,10 +22,12 @@ public class Groupe {
     private int estSelectionne;
     private Genre genre ;
     private Dispositif dispositif;
+    private Festival festival;
     private ArrayList<Titre> lesTitres;
     private ArrayList<Membre> lesMembres;
     private Membre leMembreContact;
     private ArrayList<Concert> lesConcerts;
+    private ArrayList<Festival> lesFestivals;
 
     public Groupe() {
     }
@@ -162,8 +164,27 @@ public class Groupe {
     public void setMail(String mail) {
         this.mail = mail;
     }
-    
-    
-    
 
+    public Festival getFestival() {
+        return festival;
+    }
+
+    public void setFestival(Festival festival) {
+        this.festival = festival;
+    }
+
+     public ArrayList<Festival> getLesFestivals() {
+        return lesFestivals;
+    }
+
+    public void setLesFestivals(ArrayList<Festival> lesFestivals) {
+        this.lesFestivals = lesFestivals;
+    }
+    
+        public void addUnFestival(Festival unFestival){
+        if (lesFestivals == null){
+            lesFestivals = new ArrayList<>();
+        }
+        lesFestivals.add(unFestival);
+    }
 }

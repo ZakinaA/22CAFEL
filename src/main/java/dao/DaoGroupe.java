@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Concert;
 import model.Dispositif;
+import model.Festival;
 import model.Genre;
 import model.Groupe;
 import model.Instrument;
@@ -283,6 +284,47 @@ public class DaoGroupe {
                 leGroupe.setNom(rs.getString("gpe_nom"));
                 leGroupe.setDateCreation(rs.getString("gpe_dateCreation"));
 
+                lesGroupes.add(leGroupe);
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+            //out.println("Erreur lors de l’établissement de la connexion");
+        }
+        return lesGroupes ;
+    }
+    
+    
+    public static ArrayList<Groupe> getLesGroupesByFestival(Connection connection, int fest_id){
+        ArrayList<Groupe> lesGroupes = new  ArrayList<Groupe>();
+        try
+        {
+            //preparation de la requete
+            requete=connection.prepareStatement("select * from groupe G, festival F, festivalgroupe FG where FG.gpe_id = G.gpe_id and FG.fest_id=F.fest_id and F.fest_id=?");
+            requete.setInt(1, fest_id);
+            System.out.println("Requete" + requete);
+
+            //executer la requete
+            rs=requete.executeQuery();
+
+            //On hydrate l'objet métier Groupe et sa relation Genre avec les résultats de la requête
+            while ( rs.next() ) {
+
+
+                Groupe leGroupe = new Groupe();
+                leGroupe.setId(rs.getInt("gpe_id"));
+                leGroupe.setNom(rs.getString("gpe_nom"));
+                leGroupe.setDateCreation(rs.getString("gpe_dateCreation"));
+                
+                Festival leFestival = new Festival();
+                leFestival.setFest_id(rs.getInt("fest_id"));
+                leFestival.setFest_nom(rs.getString("fest_nom"));
+                leFestival.setFest_dateDebut(rs.getString("fest_dateDebut"));
+                leFestival.setFest_dateFin(rs.getString("fest_dateFin"));
+                
+                leGroupe.setFestival(leFestival);
+                
                 lesGroupes.add(leGroupe);
             }
         }

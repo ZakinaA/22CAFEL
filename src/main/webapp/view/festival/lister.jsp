@@ -57,6 +57,8 @@
                     out.println("<td>");
                     out.println(unFestival.getFest_dateFin());
                     out.println("</td>");
+                    
+                    
                 }
             %>
         </tr>
