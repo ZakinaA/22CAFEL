@@ -58,5 +58,6 @@
     </br>
     <input type="submit" name="valider" id="valider" value="Valider"/>
 </form>
+    <%@include file="../pied.jsp"%>
 </body>
 </html>

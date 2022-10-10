@@ -37,5 +37,6 @@
 <br>
 <input class="btn btn-normanzik" type="button" value="Retour" onclick="history.back()">
 </div>
+                <%@include file="../pied.jsp"%>
 </body>
 </html>

@@ -60,4 +60,6 @@
         
 </div>
 </body>
+
+<%@include file="../pied.jsp"%>
 </html>

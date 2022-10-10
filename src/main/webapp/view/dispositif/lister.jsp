@@ -44,5 +44,6 @@
         </tbody>
     </table>
 </div>
+        <%@include file="../pied.jsp"%>
 </body>
 </html>

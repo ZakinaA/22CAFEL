@@ -5,7 +5,7 @@
     .header{
         background-color: rgba(255,255,255,0.75);
         margin-top: 0px;
-        margin-left: -20px;
+        margin-left: -10px;
         margin-right: -10px;
 }
     

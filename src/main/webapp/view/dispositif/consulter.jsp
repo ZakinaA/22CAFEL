@@ -59,6 +59,6 @@ out.println("<b>Les membres du groupe : </b>");
     
         
 
-
+<%@include file="../pied.jsp"%>
 </body>
 </html>

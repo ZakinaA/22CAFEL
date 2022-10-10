@@ -78,5 +78,6 @@
         <button type="button" class="btn btn-normanzik">Retour</button>
     </a>
 </div>
+    <%@include file="../pied.jsp"%>
 </body>
 </html>
