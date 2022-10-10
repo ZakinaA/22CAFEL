@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Concert;
 import model.Groupe;
+import model.Lieu;
 
 /**
  *
@@ -64,7 +65,7 @@ public static ArrayList<Concert> getLesConcerts(Connection connection){
         try
         {
             //preparation de la requete
-            requete=connection.prepareStatement("select * from concert, groupe where con_idGroupe=gpe_id");
+            requete=connection.prepareStatement("select * from concert, groupe, lieu where con_idGroupe=gpe_id and con_idLieu=lieu_id");
             System.out.println("Requete" + requete);
 
             //executer la requete
@@ -82,8 +83,13 @@ public static ArrayList<Concert> getLesConcerts(Connection connection){
                 leGroupe.setId(rs.getInt("gpe_id"));
                 leGroupe.setNom(rs.getString("gpe_nom"));
                 
+                Lieu leLieu = new Lieu();
+                leLieu.setId(rs.getInt("lieu_id"));
+                leLieu.setVille(rs.getString("lieu_ville"));
+                
                 
                 leConcert.setLeGroupe(leGroupe);
+                leConcert.setLeLieu(leLieu);
                 lesConcerts.add(leConcert);
             }
         }

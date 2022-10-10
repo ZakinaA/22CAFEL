@@ -32,6 +32,7 @@
         <tr>
             <th>Date</th>
             <th>Nom du groupe</th>
+            <th>Ville</th>
 
         </tr>
         </thead>
@@ -45,9 +46,13 @@
                     out.println("</td>");
                     
                     out.println("<td>");
+                    out.println("&#128279 <a href ='../ServletGroupe/consulter?idGroupe=" + unConcert.getLeGroupe().getId() + "'>");
                     out.println(unConcert.getLeGroupe().getNom());
                     out.println("</td>");
                     
+                    out.println("<td>");
+                    out.println(unConcert.getLeLieu().getVille());
+                    out.println("</td>");
                     
                 }
             %>
