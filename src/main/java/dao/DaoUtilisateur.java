@@ -35,11 +35,11 @@ public class DaoUtilisateur {
             //On hydrate l'objet métier Genre et sa relation Genre avec les résultats de la requête
             while ( rs.next() ) {
                 
-                Utilisateur lUtilisateur = new Utilisateur();
-                lUtilisateur.setUti_identifiant(rs.getInt("uti_identifiant"));
-                lUtilisateur.setUti_mdp(rs.getString("uti_mdp"));
+                Utilisateur leUtilisateur = new Utilisateur();
+                leUtilisateur.setUti_identifiant(rs.getString("uti_identifiant"));
+                leUtilisateur.setUti_mdp(rs.getString("uti_mdp"));
 
-                lesUtilisateurs.add(lUtilisateur);
+                lesUtilisateurs.add(leUtilisateur);
             }
         }
         catch (SQLException e)
@@ -50,14 +50,14 @@ public class DaoUtilisateur {
         return lesUtilisateurs ;
     }
     
-    public static Utilisateur getLutilisateur(Connection connection, int idUtilisateur){
+    public static Utilisateur getLeUtilisateur(Connection connection, String idUtilisateur){
 
-        Utilisateur lUtilisateur = new Utilisateur();
+        Utilisateur leUtilisateur = new Utilisateur();
         try
         {
             //preparation de la requete
             requete=connection.prepareStatement("select * from utilisateur where uti_identifiant=?");
-            requete.setInt(1, idUtilisateur);
+            requete.setString(1, idUtilisateur);
             System.out.println("Requete" + requete);
 
             //executer la requete
@@ -66,8 +66,8 @@ public class DaoUtilisateur {
             //On hydrate l'objet métier Groupe et sa relation Genre avec les résultats de la requête
             if ( rs.next() ) {
 
-                lUtilisateur.setUti_identifiant(rs.getInt("uti_identifiant"));
-                lUtilisateur.setUti_mdp(rs.getString("uti_mdp"));
+                leUtilisateur.setUti_identifiant(rs.getString("uti_identifiant"));
+                leUtilisateur.setUti_mdp(rs.getString("uti_mdp"));
                 
             }
         }
@@ -76,11 +76,10 @@ public class DaoUtilisateur {
             e.printStackTrace();
             //out.println("Erreur lors de l’établissement de la connexion");
         }
-        return lUtilisateur ;
+        return leUtilisateur ;
     }
     
     public static Utilisateur ajouterUtilisateur(Connection connection, Utilisateur unUtilisateur){
-        int idGenere = -1;
         try
         {
             //preparation de la requete
@@ -89,20 +88,13 @@ public class DaoUtilisateur {
             // supprimer ce paramètre en cas de requête sans auto_increment.
             requete=connection.prepareStatement("INSERT INTO UTILISATEUR ( uti_identifiant, uti_mdp)\n" +
                     "VALUES (?,?)", requete.RETURN_GENERATED_KEYS );
-            requete.setInt(1, unUtilisateur.getUti_identifiant());
+            requete.setString(1, unUtilisateur.getUti_identifiant());
             requete.setString(2, unUtilisateur.getUti_mdp());
 
             System.out.println("requeteInsertion=" + requete);
             /* Exécution de la requête */
             int resultatRequete = requete.executeUpdate();
             System.out.println("resultatrequete=" + resultatRequete);
-
-            // Récupération de id auto-généré par la bdd dans la table groupe
-            rs = requete.getGeneratedKeys();
-            while ( rs.next() ) {
-                idGenere = rs.getInt( 1 );
-                unUtilisateur.setUti_identifiant(idGenere);
-            }
 
             // si le résultat de la requete est différent de 1, c'est que la requête a échoué.
             // Dans ce cas, on remet l'objet groupe à null
