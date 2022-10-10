@@ -86,10 +86,11 @@ public class DaoUtilisateur {
             // gpe_id (clé primaire de la table groupe) est en auto_increment,donc on ne renseigne pas cette valeur
             // le paramètre RETURN_GENERATED_KEYS est ajouté à la requête afin de pouvoir récupérer l'id généré par la bdd (voir ci-dessous)
             // supprimer ce paramètre en cas de requête sans auto_increment.
-            requete=connection.prepareStatement("INSERT INTO UTILISATEUR ( uti_identifiant, uti_mdp)\n" +
-                    "VALUES (?,?)", requete.RETURN_GENERATED_KEYS );
+            requete=connection.prepareStatement("INSERT INTO UTILISATEUR ( uti_identifiant, uti_mdp, uti_idRole)\n" +
+                    "VALUES (?,?,?)", requete.RETURN_GENERATED_KEYS );
             requete.setString(1, unUtilisateur.getUti_identifiant());
             requete.setString(2, unUtilisateur.getUti_mdp());
+            requete.setInt(3, unUtilisateur.getUti_idRole());
 
             System.out.println("requeteInsertion=" + requete);
             /* Exécution de la requête */

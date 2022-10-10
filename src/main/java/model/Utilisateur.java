@@ -11,14 +11,16 @@ package model;
 public class Utilisateur {
     private String uti_identifiant ;
     private String uti_mdp ;
+    private int Uti_idRole ;
     private RoleUtilisateur roleUtilisateur ;
 
     public Utilisateur() {
     }
 
-    public Utilisateur(String uti_identifiant, String uti_mdp, RoleUtilisateur roluti_id) {
+    public Utilisateur(String uti_identifiant, String uti_mdp, int Uti_idRole, RoleUtilisateur roleUtilisateur) {
         this.uti_identifiant = uti_identifiant;
         this.uti_mdp = uti_mdp;
+        this.Uti_idRole = Uti_idRole;
         this.roleUtilisateur = roleUtilisateur;
     }
 
@@ -28,6 +30,10 @@ public class Utilisateur {
 
     public String getUti_mdp() {
         return uti_mdp;
+    }
+
+    public int getUti_idRole() {
+        return Uti_idRole;
     }
 
     public RoleUtilisateur getRoleUtilisateur() {
@@ -42,8 +48,12 @@ public class Utilisateur {
         this.uti_mdp = uti_mdp;
     }
 
-    public void setRoleUtilisateur(RoleUtilisateur roluti_id) {
-        this.roleUtilisateur = roluti_id;
+    public void setUti_idRole(int Uti_idRole) {
+        this.Uti_idRole = Uti_idRole;
     }
- 
+
+    public void setRoleUtilisateur(RoleUtilisateur roleUtilisateur) {
+        this.roleUtilisateur = roleUtilisateur;
+    }
+
 }

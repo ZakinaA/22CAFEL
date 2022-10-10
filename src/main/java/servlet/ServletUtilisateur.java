@@ -95,7 +95,7 @@ public class ServletUtilisateur extends HttpServlet {
 
         // Affichage du membre selectionné (depuis la fonctionnalité inscription)
         if(url.equals("/normanzik/ServletUtilisateur/inscription")){
-
+            this.getServletContext().getRequestDispatcher("/view/utilisateur/inscription.jsp" ).forward( request, response );
 
         }
         if(url.equals("/normanzik/ServletUtilisateur/connexion")){

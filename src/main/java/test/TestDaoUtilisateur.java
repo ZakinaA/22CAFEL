@@ -34,11 +34,7 @@ public class TestDaoUtilisateur {
         Utilisateur uti = new Utilisateur();
         uti.setUti_identifiant("usertest");
         uti.setUti_mdp("password");
-        
-        RoleUtilisateur roluti = new RoleUtilisateur();
-        roluti.setRoluti_id(4);
-        
-        uti.setRoleUtilisateur(roluti);
+        uti.setUti_idRole(4);
         
         Utilisateur leUtilisateurAInsere = DaoUtilisateur.ajouterUtilisateur(con, uti);
                
