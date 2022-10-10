@@ -27,6 +27,10 @@
         <servlet-name>ServletUtilisateur</servlet-name>
         <servlet-class>servlet.ServletUtilisateur</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletFestival</servlet-name>
+        <servlet-class>servlet.ServletFestival</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletGroupe</servlet-name>
         <url-pattern>/ServletGroupe/consulter</url-pattern>
