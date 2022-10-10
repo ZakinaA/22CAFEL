@@ -6,7 +6,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@include file="../entete.jsp"%>
 <html>
-<div class="container px-4 px-lg-5">
+<div class="container px-4 px-lg-5 custom-container">
 <br/>
 
 
@@ -21,7 +21,7 @@
 <form class="form-inline" action="ajouter" method="POST">
     <ul class="list-group list-group-flush">
     <li class="list-group-item">Nom :
-    <input id="nom" type="text" name="nom"  size="70" maxlength="70">
+    <input id="nom" type="text" name="nom"  maxlength="70">
     <span style="color: blue;">${form.erreurs['nom']}</span></li>
     
     <li class="list-group-item"> Date de création : 
@@ -30,17 +30,17 @@
     </li>
     
     <li class="list-group-item">Telephone :
-    <input id="telephone"  type="text"  name="telephone" size="10" maxlength="12">
+    <input id="telephone"  type="text"  name="telephone" maxlength="12">
     <span style="color: blue;">${form.erreurs['telephone']}</span>
     </li>
     
     <li class="list-group-item"> Site Web :
-    <input id="siteWeb"  type="text"  name="siteWeb" size="70" maxlength="50">
+    <input id="siteWeb"  type="text"  name="siteWeb" maxlength="50">
     <span style="color: blue;">${form.erreurs['siteWeb']}</span>
     </li>
     
     <li class="list-group-item"> Mail :
-    <input id="mail"  type="text"  name="mail" size="70" maxlength="70">
+    <input id="mail"  type="text"  name="mail" maxlength="70">
     <span style="color: blue;">${form.erreurs['mail']}</span>
     </li>
     

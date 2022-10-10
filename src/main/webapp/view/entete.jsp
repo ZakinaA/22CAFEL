@@ -65,7 +65,7 @@
             <table class="entete">
                     <tr>
                         <td><a href="http://localhost:8080/normanzik/ServletConcert/lister">Concerts</a></td>
-                        <td><a href="#">Festivals</a></td>
+                        <td><a href="http://localhost:8080/normanzik/ServletFestival/lister">Festivals</a></td>
                         <td><a href="http://localhost:8080/normanzik/ServletGroupe/lister">Groupes</a></td>
                     </tr>
                 </table>

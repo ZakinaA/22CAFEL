@@ -8,7 +8,7 @@
 <%@page import="model.Membre"%>
 <%@include file="../entete.jsp" %>
 <html>
-<div class="container px-4 px-lg-5">
+<div class="container px-4 px-lg-5 custom-container">
 <br/>
 
 <div class="container">
