@@ -115,48 +115,18 @@ public class ServletUtilisateur extends HttpServlet {
     @Override
    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-        FormUtilisateur form = new FormUtilisateur();
-
-        /* Appel au traitement et à la validation de la requête, et récupération de l'objet en résultant */
-        Utilisateur leUtilisateurSaisi = form.ajouterUtilisateur(request);
-
-        /* Stockage du formulaire et de l'objet dans l'objet request */
-        request.setAttribute( "form", form );
-        request.setAttribute( "pUtilisateur", leUtilisateurSaisi );
-
-        if (form.getErreurs().isEmpty()){
-            // Il n'y a pas eu d'erreurs de saisie, donc on renvoie la vue affichant les infos du groupe
-            Utilisateur utilisateurAjoute = DaoUtilisateur.ajouterUtilisateur(connection, leUtilisateurSaisi);
-
-            if (utilisateurAjoute != null ){
-                Utilisateur leUtilisateur = DaoUtilisateur.getLeUtilisateur(connection, leUtilisateurSaisi.getUti_identifiant());
-                request.setAttribute("pUtilisateur", leUtilisateur);
-                this.getServletContext().getRequestDispatcher("/view/utilisateur/inscription.jsp" ).forward( request, response );
-            }
-            else
-            {
-                // Cas où l'insertion en bdd a échoué
-                //On renvoie vers le formulaire
-                ArrayList<Instrument> lesInstruments = DaoAdmin.getLesInstruments(connection);
-                request.setAttribute("pLesInstruments", lesInstruments);
-                ArrayList<Statut> lesStatuts = DaoAdmin.getLesStatuts(connection);
-                request.setAttribute("pLesStatuts", lesStatuts);
-                System.out.println("le groupe est null en bdd- echec en bdd");
-                this.getServletContext().getRequestDispatcher("/view/groupe/ajouter.jsp" ).forward( request, response );
-            }
-        }
-        else
-        {
-
-            // il y a des erreurs de saisie. On réaffiche le formulaire avec des messages d'erreurs
-            ArrayList<Instrument> lesInstruments = DaoAdmin.getLesInstruments(connection);
-            request.setAttribute("pLesInstruments", lesInstruments);
-            ArrayList<Statut> lesStatuts = DaoAdmin.getLesStatuts(connection);
-            request.setAttribute("pLesStatuts", lesStatuts);
-            this.getServletContext().getRequestDispatcher("/view/groupe/ajouter.jsp" ).forward( request, response );
-        }
+        
+        String identifiant = request.getParameter("identifiant");
+        String mdp = request.getParameter("mdp");
+        
+        request.setAttribute("identifiant", identifiant);
+        request.setAttribute("mdp", mdp);
+        this.getServletContext().getRequestDispatcher("/view/utilisateur/connexion.jsp").forward(request, response);
+        
     }
+       
+        
+    
 
     /**
      * Returns a short description of the servlet.

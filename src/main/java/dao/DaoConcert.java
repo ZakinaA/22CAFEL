@@ -86,6 +86,7 @@ public static ArrayList<Concert> getLesConcerts(Connection connection){
                 Lieu leLieu = new Lieu();
                 leLieu.setId(rs.getInt("lieu_id"));
                 leLieu.setVille(rs.getString("lieu_ville"));
+                leLieu.setRue(rs.getString("lieu_rue"));
                 
                 
                 leConcert.setLeGroupe(leGroupe);

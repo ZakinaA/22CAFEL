@@ -39,5 +39,8 @@ public class TestDaoUtilisateur {
         Utilisateur leUtilisateurAInsere = DaoUtilisateur.ajouterUtilisateur(con, uti);
                
         ConnexionBdd.fermerConnexion(con);
+        
+        
+        
     }
 }

@@ -39,7 +39,6 @@
                     <table class="table bg-normanzik">
                         <thead>
                             <tr>
-                            <th>Id</th>
                             <th>Nom</th>
                             <th>Prenom</th>
                             </tr>
@@ -49,9 +48,7 @@
                             <%
                             for (int i=0; i<unGroupe.getLesMembres().size(); i++) {
                             Membre unMembre = unGroupe.getLesMembres().get(i);
-                            out.println("<tr><td>");
-                            out.println(unMembre.getId());
-                            out.println("</td>");
+                            out.println("<tr>");
                     
                             out.println("<td>");
                             out.println("&#128279 <a href ='../ServletMembre/consulter?idMembre=" + unMembre.getId() + "'>");

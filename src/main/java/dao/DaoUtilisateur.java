@@ -50,14 +50,15 @@ public class DaoUtilisateur {
         return lesUtilisateurs ;
     }
     
-    public static Utilisateur getLeUtilisateur(Connection connection, String idUtilisateur){
+    public static Utilisateur getLeUtilisateur(Connection connection, String idUtilisateur, String mdpUtilisateur){
 
         Utilisateur leUtilisateur = new Utilisateur();
         try
         {
             //preparation de la requete
-            requete=connection.prepareStatement("select * from utilisateur where uti_identifiant=?");
+            requete=connection.prepareStatement("select * from utilisateur where uti_identifiant=? and uti_mdp=?");
             requete.setString(1, idUtilisateur);
+            requete.setString(2, mdpUtilisateur);
             System.out.println("Requete" + requete);
 
             //executer la requete
@@ -68,7 +69,7 @@ public class DaoUtilisateur {
 
                 leUtilisateur.setUti_identifiant(rs.getString("uti_identifiant"));
                 leUtilisateur.setUti_mdp(rs.getString("uti_mdp"));
-                
+                return leUtilisateur;
             }
         }
         catch (SQLException e)

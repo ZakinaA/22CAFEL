@@ -33,6 +33,7 @@
             <th>Date</th>
             <th>Nom du groupe</th>
             <th>Ville</th>
+            <th>Rue</th>
 
         </tr>
         </thead>
@@ -52,6 +53,10 @@
                     
                     out.println("<td>");
                     out.println(unConcert.getLeLieu().getVille());
+                    out.println("</td>");
+                    
+                    out.println("<td>");
+                    out.println(unConcert.getLeLieu().getRue());
                     out.println("</td>");
                     
                 }

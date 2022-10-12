@@ -25,14 +25,14 @@
                     </div>
 
 
-    <form class="form-inline" action="ajouter" method="POST">
+    <form class="form-inline" method="POST">
     <ul class="list-group list-group-flush">
     <li class="list-group-item">Identifiant :
-    <input id="nom" type="text" name="nom" maxlength="70">
+    <input id="nom" type="text" name="identifiant" maxlength="70">
     <span style="color: blue;">${form.erreurs['identifiant']}</span></li>
  
     <li class="list-group-item">Mot de passe :
-    <input id="telephone"  type="text"  name="telephone" maxlength="20">
+    <input id="telephone"  type="password"  name="telephone" maxlength="20">
     <span style="color: blue;">${form.erreurs['motdepasse']}</span>
     </li>
     <li class="list-group-item">
@@ -41,7 +41,7 @@
     </ul>
     </div>
     <br>
-    <button type="button" class="btn btn-normanzik" onclick = "">Se connecter</button>
+    <button type="submit" class="btn btn-normanzik">Se connecter</button>
 </form>    
 </body>
 </html>
