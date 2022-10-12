@@ -51,7 +51,5 @@
 </div>
     <br><input class="btn btn-normanzik" type="submit" name="valider" id="valider" value="Valider"/>
     
-    <% inscription = "INSERT INTO utilisateur(uti_identifiant, uti_mdp, uti_idRole) VALUES ('" + username + "','" + motDePasse + "','" + motDePasse +")"; %>
-    
 </body>
 </html>
