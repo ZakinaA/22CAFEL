@@ -58,15 +58,15 @@
     <header class="header">
         <a class="tn" href="../index.html"><h1>Norman'Zik</h1></a>
               
-            <a href="http://localhost:8080/normanzik/ServletUtilisateur/connexion"><img class="imgen" src="../img/img_entete.png"></a> 
+            <a href="../ServletUtilisateur/connexion"><img class="imgen" src="../img/img_entete.png"></a> 
    
             
             
             <table class="entete">
                     <tr>
-                        <td><a href="http://localhost:8080/normanzik/ServletConcert/lister">Concerts</a></td>
-                        <td><a href="http://localhost:8080/normanzik/ServletFestival/lister">Festivals</a></td>
-                        <td><a href="http://localhost:8080/normanzik/ServletGroupe/lister">Groupes</a></td>
+                        <td><a href="../ServletConcert/lister">Concerts</a></td>
+                        <td><a href="../ServletFestival/lister">Festivals</a></td>
+                        <td><a href="../ServletGroupe/lister">Groupes</a></td>
                     </tr>
                 </table>
             
