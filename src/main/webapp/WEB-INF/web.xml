@@ -28,8 +28,8 @@
         <servlet-class>servlet.ServletConnexion</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletUtilisateur</servlet-name>
-        <servlet-class>servlet.ServletUtilisateur</servlet-class>
+        <servlet-name>ServletInscription</servlet-name>
+        <servlet-class>servlet.ServletInscription</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletFestival</servlet-name>
@@ -82,6 +82,10 @@
     <servlet-mapping>
         <servlet-name>ServletUtilisateur</servlet-name>
         <url-pattern>/ServletUtilisateur/profil</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletInscription</servlet-name>
+        <url-pattern>/ServletInscription/inscription</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

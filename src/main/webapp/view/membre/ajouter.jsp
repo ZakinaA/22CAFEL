@@ -11,7 +11,6 @@
 
 
 <%
-    //Client client=(Client)request.getAttribute("client");
     FormMembre form = (FormMembre)request.getAttribute("form");
 %>
 

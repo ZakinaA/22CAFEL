@@ -13,7 +13,7 @@
     }
     .pied td a{
         color: #5e3f9c;
-        text-align: center;
+        text-atdgn: center;
         text-decoration: none;
     }
     
@@ -22,19 +22,18 @@
         transition: 0.3s all;
     }
 </style>
-
+ 
 
 <footer class="footer">
-     <table class="pied">
+    <table class="pied">
                     <tr>
-                        <td><a href="#">Mention legal</a></td>
-                        <td><a href="#">Politique de confidentialité</a></td>
-                        <td><a href="#">RGPD</a></td>
-                        <td><a href="#">A Propos</a></td>
-                        <td><a href="#">Contact</a></td>
-                        <td><a href="#">Copyright 2022</a></td>
+                        <td><a href="http://localhost:8080/normanzik/footer/mentions">Mentions Légales</a></td>
+                        <td><a href="http://localhost:8080/normanzik/footer/politique">Politique de Confidentiatdté</a></td>
+                        <td><p>Copyright 2022</p></td>
+                        <td><a href="http://localhost:8080/normanzik/footer/apropos">A Propos</a></td>
+                        <td><a href="http://localhost:8080/normanzik/footer/contact">Contact</a></td>
                     </tr>
-                </table>
+    </table>
 </footer>
 
     </body>

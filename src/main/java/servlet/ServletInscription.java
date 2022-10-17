@@ -4,33 +4,26 @@
  */
 package servlet;
 
-import dao.DaoAdmin;
+
 import dao.DaoUtilisateur;
-import form.FormConnexion;
+import form.FormInscription;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Groupe;
-import model.Statut;
-import model.Instrument;
 import model.Utilisateur;
 
 /**
  *
  * @author sio2
  */
-
-
-public class ServletUtilisateur extends HttpServlet {
+public class ServletInscription extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -99,21 +92,11 @@ public class ServletUtilisateur extends HttpServlet {
 
         // Affichage du membre selectionné (depuis la fonctionnalité inscription)
         
-        if(url.equals("/normanzik/ServletUtilisateur/profil")){
-            this.getServletContext().getRequestDispatcher("/view/utilisateur/profil.jsp" ).forward( request, response );
+        if(url.equals("/normanzik/ServletUtilisateur/inscription")){
+            this.getServletContext().getRequestDispatcher("/view/utilisateur/inscription.jsp" ).forward( request, response );
         }
         
-        if (request.getParameter("logout") != null) {  
-        HttpSession session = request.getSession(false);
-        if(session != null){
-    		session.invalidate();
-             
-                
-    	}
-        }
-       }
-        
-    
+    }
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -127,6 +110,31 @@ public class ServletUtilisateur extends HttpServlet {
    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
+       System.out.println("PASSE DO POSTE SERVLER UTIISATE");
+        
+        FormInscription form = new FormInscription();
+        
+        
+        Utilisateur lUtilisateurSaisi = form.inscription(request);  
+        
+        
+        request.setAttribute( "form", form );
+        request.setAttribute( "pUtilisateur", lUtilisateurSaisi );
+        
+        if (form.getErreurs().isEmpty()){
+            
+            Utilisateur utilisateurAInsere = DaoUtilisateur.ajouterUtilisateur(connection, lUtilisateurSaisi);
+            if(utilisateurAInsere != null){
+                response.sendRedirect("/normanzik/ServletMembre/ajouter");
+            }
+            else{
+                this.getServletContext().getRequestDispatcher("/view/utilisateur/inscription.jsp" ).forward( request, response );
+            }
+        }
+        else{
+            this.getServletContext().getRequestDispatcher("/view/utilisateur/inscription.jsp" ).forward( request, response );
+        }
+        
     }
 
     /**
