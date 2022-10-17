@@ -9,31 +9,28 @@ package model;
  * @author sio2
  */
 public class RoleUtilisateur {
-   private int roluti_id ;
-   private String roluti_libelle ;
+   private int id ;
+   private String libelle ;
 
     public RoleUtilisateur() {
     }
 
-    public RoleUtilisateur(int roluti_id, String roluti_libelle) {
-        this.roluti_id = roluti_id;
-        this.roluti_libelle = roluti_libelle;
+    public int getId() {
+        return id;
     }
 
-    public int getRoluti_id() {
-        return roluti_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getRoluti_libelle() {
-        return roluti_libelle;
+    public String getLibelle() {
+        return libelle;
     }
 
-    public void setRoluti_id(int roluti_id) {
-        this.roluti_id = roluti_id;
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
     }
 
-    public void setRoluti_libelle(String roluti_libelle) {
-        this.roluti_libelle = roluti_libelle;
-    }
-
+   
+ 
 }

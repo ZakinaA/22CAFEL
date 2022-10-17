@@ -56,9 +56,16 @@
 </head>
 <body>
     <header class="header">
-        <a class="tn" href="../index.html"><h1>Norman'Zik</h1></a>
-              
-            <a href="../ServletUtilisateur/connexion"><img class="imgen" src="../img/img_entete.png"></a> 
+        <a class="tn" href="../index.jsp"><h1>Norman'Zik</h1></a>
+        <%
+        
+            out.println(session.getAttribute("role"));
+if(session.getAttribute("identifiant") == "null"){
+                  out.println("<a href='../ServletConnexion/profil'><img class='imgen' src='../img/img_entete.png'></a>"); 
+            }
+            else{
+             out.println("<a href='../ServletConnexion/connexion'><img class='imgen' src='../img/img_entete.png'></a>"); 
+            }%>
    
             
             
@@ -69,6 +76,7 @@
                         <td><a href="../ServletGroupe/lister">Groupes</a></td>
                     </tr>
                 </table>
+            
             
  
     </header>

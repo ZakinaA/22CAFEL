@@ -18,10 +18,13 @@ public class TestDaoUtilisateur {
      public static void main(String[] args) {
         Connection con = ConnexionBdd.ouvrirConnexion();
         
-        /*Utilisateur leUtilisateur = DaoUtilisateur.getLeUtilisateur(con, 1);
-        System.out.println("Utilisateur de l'id 1 " + leUtilisateur.getUti_identifiant() + ". Mot de passe de l'utilisateur : " + leUtilisateur.getUti_mdp());
+        String identifiant = "NicoZANGA";
+        String mdp = "fdbwgt";
         
+        Utilisateur unUtilisateur = DaoUtilisateur.getLeUtilisateur(con, identifiant, mdp);
+        System.out.println("id :" + unUtilisateur.getIdentifiant() + "  role : " + unUtilisateur.getRoleUtilisateur().getId() + " membre : " + unUtilisateur.getMembre().getId());
         
+        /*
         ArrayList<Utilisateur> lesUtilisateurs = getLesUtilisateurs(con);
         for (int i=0; i<lesUtilisateurs.size(); i++){
             Utilisateur utilisateur = lesUtilisateurs.get(i);
@@ -31,12 +34,12 @@ public class TestDaoUtilisateur {
         }
         */
         
-        Utilisateur uti = new Utilisateur();
+        /* Utilisateur uti = new Utilisateur();
         uti.setUti_identifiant("usertest");
         uti.setUti_mdp("password");
         uti.setUti_idRole(4);
         
-        Utilisateur leUtilisateurAInsere = DaoUtilisateur.ajouterUtilisateur(con, uti);
+        Utilisateur leUtilisateurAInsere = DaoUtilisateur.ajouterUtilisateur(con, uti);*/
                
         ConnexionBdd.fermerConnexion(con);
         

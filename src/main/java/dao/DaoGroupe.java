@@ -142,7 +142,8 @@ public class DaoGroupe {
     public static Groupe ajouterGroupe(Connection connection, Groupe unGroupe){
         int idGenere = -1;
         try
-        {
+        {  
+            System.out.println("AJOUTER GROUPE DAO GROUPE");
             //preparation de la requete
             // gpe_id (clé primaire de la table groupe) est en auto_increment,donc on ne renseigne pas cette valeur
             // le paramètre RETURN_GENERATED_KEYS est ajouté à la requête afin de pouvoir récupérer l'id généré par la bdd (voir ci-dessous)

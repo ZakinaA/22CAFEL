@@ -68,15 +68,14 @@
     </select>
     </li>
     </ul> 
-</form>   
-</div>
+    </div>
+      <br>
+    <input class="btn btn-normanzik" type="submit" name="valider" id="valider" value="Valider"/>
+</form>  
     
     <br>
-    <input class="btn btn-normanzik" type="submit" name="valider" id="valider" value="Valider"/>
     
-    <a href="http://localhost:8080/normanzik/ServletGroupe/lister">
-        <button type="button" class="btn btn-normanzik">Retour</button>
-    </a>
+    
 </div>
     <%@include file="../pied.jsp"%>
 </body>

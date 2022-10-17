@@ -38,8 +38,8 @@ public class DaoRoleUtilisateur {
             //On hydrate l'objet métier Groupe et sa relation Genre avec les résultats de la requête
             if ( rs.next() ) {
 
-                leRoleUtilisateur.setRoluti_id(rs.getInt("roluti_id"));
-                leRoleUtilisateur.setRoluti_libelle(rs.getString("roluti_libelle"));
+                leRoleUtilisateur.setId(rs.getInt("roluti_id"));
+                leRoleUtilisateur.setLibelle(rs.getString("roluti_libelle"));
                 
             }
         }

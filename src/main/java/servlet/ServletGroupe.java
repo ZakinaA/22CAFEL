@@ -130,6 +130,8 @@ public class ServletGroupe extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        System.out.println("AJOUTER GROUPE");
        
         FormGroupe form = new FormGroupe();
 
@@ -142,6 +144,7 @@ public class ServletGroupe extends HttpServlet {
 
         if (form.getErreurs().isEmpty()){
             // Il n'y a pas eu d'erreurs de saisie, donc on renvoie la vue affichant les infos du groupe
+            System.out.println("DAO GROU GROUPE");
             Groupe groupeAjoute = DaoGroupe.ajouterGroupe(connection, leGroupeSaisi);
 
             if (groupeAjoute != null ){
@@ -151,6 +154,7 @@ public class ServletGroupe extends HttpServlet {
             }
             else
             {
+                  System.out.println("gfdgfdgfdgd");
                 // Cas où l'insertion en bdd a échoué
                 //On renvoie vers le formulaire
                 ArrayList<Genre> lesGenres = DaoAdmin.getLesGenres(connection);
@@ -163,7 +167,7 @@ public class ServletGroupe extends HttpServlet {
         }
         else
         {
-
+                System.out.println("ERREURSnnhh");
             // il y a des erreurs de saisie. On réaffiche le formulaire avec des messages d'erreurs
             ArrayList<Genre> lesGenres = DaoAdmin.getLesGenres(connection);
             request.setAttribute("pLesGenres", lesGenres);

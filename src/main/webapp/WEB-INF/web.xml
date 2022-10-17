@@ -24,8 +24,8 @@
         <servlet-class>servlet.ServletConcert</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletUtilisateur</servlet-name>
-        <servlet-class>servlet.ServletUtilisateur</servlet-class>
+        <servlet-name>ServletConnexion</servlet-name>
+        <servlet-class>servlet.ServletConnexion</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletFestival</servlet-name>
@@ -68,12 +68,8 @@
         <url-pattern>/ServletConcert/lister</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletUtilisateur</servlet-name>
-        <url-pattern>/ServletUtilisateur/connexion</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletUtilisateur</servlet-name>
-        <url-pattern>/ServletUtilisateur/inscription</url-pattern>
+        <servlet-name>ServletConnexion</servlet-name>
+        <url-pattern>/ServletConnexion/connexion</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletFestival</servlet-name>

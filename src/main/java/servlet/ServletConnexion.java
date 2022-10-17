@@ -6,6 +6,7 @@ package servlet;
 
 import dao.DaoAdmin;
 import dao.DaoUtilisateur;
+import form.FormConnexion;
 import form.FormUtilisateur;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -18,6 +19,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.Groupe;
 import model.Statut;
 import model.Instrument;
 import model.Utilisateur;
@@ -26,7 +29,7 @@ import model.Utilisateur;
  *
  * @author sio2
  */
-public class ServletUtilisateur extends HttpServlet {
+public class ServletConnexion extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -83,7 +86,7 @@ public class ServletUtilisateur extends HttpServlet {
          // récupération de l url saisie dans le navigateur
         String url = request.getRequestURI();
         
-        System.out.println("servlerutilisateur url="+url);
+        System.out.println("servlerconnexion url="+url);
 
         //Affichage de tous les membres (en indiquant le libellé du genre musical)
         /*if(url.equals("/normanzik/ServletMembre/lister")){
@@ -94,11 +97,8 @@ public class ServletUtilisateur extends HttpServlet {
         }*/
 
         // Affichage du membre selectionné (depuis la fonctionnalité inscription)
-        if(url.equals("/normanzik/ServletUtilisateur/inscription")){
-            this.getServletContext().getRequestDispatcher("/view/utilisateur/inscription.jsp" ).forward( request, response );
-
-        }
-        if(url.equals("/normanzik/ServletUtilisateur/connexion")){
+        
+        if(url.equals("/normanzik/ServletConnexion/connexion")){
             this.getServletContext().getRequestDispatcher("/view/utilisateur/connexion.jsp" ).forward( request, response );
         }
         
@@ -115,18 +115,40 @@ public class ServletUtilisateur extends HttpServlet {
     @Override
    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String identifiant = request.getParameter("identifiant");
-        String mdp = request.getParameter("mdp");
-        
-        request.setAttribute("identifiant", identifiant);
-        request.setAttribute("mdp", mdp);
-        this.getServletContext().getRequestDispatcher("/view/utilisateur/connexion.jsp").forward(request, response);
-        
-    }
        
+       System.out.println("PASSE DO POSTE SERVLER UTIISATE");
         
+        FormConnexion form = new FormConnexion();
+        
+        
+        Utilisateur lUtilisateurSaisi = form.connexion(request);  
+        
+        
+        request.setAttribute( "form", form );
+        request.setAttribute( "pUtilisateur", lUtilisateurSaisi );
+        
+        if (form.getErreurs().isEmpty()){
+            String identifiant = lUtilisateurSaisi.getIdentifiant();
+            String mdp = lUtilisateurSaisi.getMdp();
+            Utilisateur utilisateurCo = DaoUtilisateur.getLeUtilisateur(connection, identifiant, mdp);
+            if(utilisateurCo.getIdentifiant() == null){
+                this.getServletContext().getRequestDispatcher("/view/utilisateur/connexion.jsp" ).forward( request, response );
+            }
+            else{
+                HttpSession session = request.getSession();
+
+                session.setAttribute("identifiant", identifiant);
+                session.setAttribute("role", utilisateurCo.getRoleUtilisateur().getId());
+                session.setAttribute("membre", utilisateurCo.getMembre());
+        
+                this.getServletContext().getRequestDispatcher("/view/utilisateur/connexion.jsp").forward(request, response);
     
+            }
+        }
+        else{
+            this.getServletContext().getRequestDispatcher("/view/utilisateur/connexion.jsp" ).forward( request, response );
+        }
+    }
 
     /**
      * Returns a short description of the servlet.
@@ -137,5 +159,10 @@ public class ServletUtilisateur extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+    }
+       
+        
+    
 
-}
+
+

@@ -70,14 +70,14 @@ public class FormUtilisateur {
         } catch ( Exception e ) {
             setErreur( "username", e.getMessage() );
         }
-         unUtilisateur.setUti_mdp(motDePasse);
+         unUtilisateur.setMdp(motDePasse);
          
         try {
             validationMotDePasse( motDePasse );
         } catch ( Exception e ) {
             setErreur( "motDePasse", e.getMessage() );
         }
-        unUtilisateur.setUti_mdp(motDePasse);
+        unUtilisateur.setMdp(motDePasse);
         
         if ( erreurs.isEmpty() ) {
             resultat = "Succès de l'ajout.";
@@ -90,4 +90,43 @@ public class FormUtilisateur {
         
         return unUtilisateur ;
     }
+    
+     private void validationLogin( String login ) throws Exception {
+        if ( login == null) {
+            throw new Exception( "Le login ne peut pas être null." );
+        }
+    }
+
+    private void validationMDP( String mdp) throws Exception {
+        if ( mdp == null) {
+            throw new Exception( "le mot de passe ne peut pas être null." );
+        }
+    }
+    
+    /*public Utilisateur connexion(HttpServletRequest request ) {
+
+        Utilisateur unUtilisateur  = new Utilisateur();
+
+        //récupération dans des variables des données saisies dans les champs de formulaire
+        String login = getDataForm( request, "login" );
+        String mdp = getDataForm( request, "mdp");
+
+        try {
+            validationLogin( login );
+        } catch ( Exception e ) {
+            setErreur( "login", e.getMessage() );
+        }
+         unUtilisateur.setIdentifiant(login);
+         
+        try {
+            validationMDP( mdp );
+        } catch ( Exception e ) {
+            setErreur( "mdp", e.getMessage() );
+        }
+        unUtilisateur.setMdp(mdp);
+        
+        return unUtilisateur;
+        
+        
+    }*/
 }
