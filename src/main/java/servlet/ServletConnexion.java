@@ -102,6 +102,8 @@ public class ServletConnexion extends HttpServlet {
             this.getServletContext().getRequestDispatcher("/view/utilisateur/connexion.jsp" ).forward( request, response );
         }
         
+        
+        
     }
 
     /**
@@ -141,7 +143,9 @@ public class ServletConnexion extends HttpServlet {
                 session.setAttribute("role", utilisateurCo.getRoleUtilisateur().getId());
                 session.setAttribute("membre", utilisateurCo.getMembre());
         
-                this.getServletContext().getRequestDispatcher("/view/utilisateur/connexion.jsp").forward(request, response);
+               
+                response.sendRedirect("/normanzik/index.jsp");
+
     
             }
         }

@@ -77,7 +77,7 @@
         <%
         
             out.println(session.getAttribute("role"));
-if(session.getAttribute("identifiant") == "null"){
+if(session.getAttribute("identifiant") == null){
                   out.println("<a href='./ServletConnexion/connexion'><img class='imgen' src='./img/img_entete.png'></a>"); 
             }
             else{

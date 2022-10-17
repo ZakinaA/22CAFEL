@@ -29,6 +29,8 @@ import model.Utilisateur;
  *
  * @author sio2
  */
+
+
 public class ServletUtilisateur extends HttpServlet {
 
     /**
@@ -102,7 +104,17 @@ public class ServletUtilisateur extends HttpServlet {
             this.getServletContext().getRequestDispatcher("/view/utilisateur/profil.jsp" ).forward( request, response );
         }
         
-    }
+        if (request.getParameter("logout") != null) {  
+        HttpSession session = request.getSession(false);
+        if(session != null){
+    		session.invalidate();
+             
+                
+    	}
+        }
+       }
+        
+    
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -115,6 +127,7 @@ public class ServletUtilisateur extends HttpServlet {
     @Override
    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       
     }
 
     /**

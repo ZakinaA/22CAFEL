@@ -18,9 +18,16 @@
     <%@include file="../pied.jsp"%>
 
 <div class="container px-4 px-lg-5 custom-container">
+<form class="form-inline" action="profil" method="GET">
 <div class="card bg-normanzik">
                     <div class="card-header">
                     <b>Connecté en tant que <%out.println(session.getAttribute("identifiant"));%></b>
                     </div>  
+                    
+</div>
+                    <br>                    
+<input class="btn btn-normanzik" type="submit" name="logout" id="logout" value="Deconnexion"">
+</form>
+                    
 </body>
 </html>
