@@ -81,7 +81,7 @@ if(session.getAttribute("identifiant") == "null"){
                   out.println("<a href='./ServletConnexion/connexion'><img class='imgen' src='./img/img_entete.png'></a>"); 
             }
             else{
-             out.println("<a href='./ServletConnexion/profil'><img class='imgen' src='./img/img_entete.png'></a>"); 
+             out.println("<a href='./ServletUtilisateur/profil'><img class='imgen' src='./img/img_entete.png'></a>"); 
             }%>
    
             

@@ -28,6 +28,10 @@
         <servlet-class>servlet.ServletConnexion</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ServletUtilisateur</servlet-name>
+        <servlet-class>servlet.ServletUtilisateur</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ServletFestival</servlet-name>
         <servlet-class>servlet.ServletFestival</servlet-class>
     </servlet>
@@ -74,6 +78,10 @@
     <servlet-mapping>
         <servlet-name>ServletFestival</servlet-name>
         <url-pattern>/ServletFestival/lister</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletUtilisateur</servlet-name>
+        <url-pattern>/ServletUtilisateur/profil</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
