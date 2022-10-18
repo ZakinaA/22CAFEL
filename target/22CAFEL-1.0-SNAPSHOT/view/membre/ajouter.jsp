@@ -4,8 +4,12 @@
 <%@ page import="form.FormMembre" %>
 <%@ page import="model.Instrument" %>
 <%@ page import="java.util.ArrayList" %>
-<%@include file="../entete.jsp" %>
+<!DOCTYPE html>
 <html>
+<head>
+    <title>WebZik</title>
+</head>
+<body>
 <h1>Ajouter Membre</h1>
 <br/>
 
@@ -58,6 +62,5 @@
     </br>
     <input type="submit" name="valider" id="valider" value="Valider"/>
 </form>
-    <%@include file="../pied.jsp"%>
 </body>
 </html>

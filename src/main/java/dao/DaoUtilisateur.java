@@ -112,9 +112,10 @@ public class DaoUtilisateur {
             // le paramètre RETURN_GENERATED_KEYS est ajouté à la requête afin de pouvoir récupérer l'id généré par la bdd (voir ci-dessous)
             // supprimer ce paramètre en cas de requête sans auto_increment.
             requete=connection.prepareStatement("INSERT INTO UTILISATEUR ( uti_identifiant, uti_mdp, uti_idRole)\n" +
-                    "VALUES (?,?,2)", requete.RETURN_GENERATED_KEYS );
+                    "VALUES (?,?,?)", requete.RETURN_GENERATED_KEYS );
             requete.setString(1, unUtilisateur.getIdentifiant());
             requete.setString(2, unUtilisateur.getMdp());
+            requete.setInt(3, unUtilisateur.getRoleUtilisateur().getId());
 
             System.out.println("requeteInsertion=" + requete);
             /* Exécution de la requête */

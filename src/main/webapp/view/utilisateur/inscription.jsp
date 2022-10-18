@@ -1,17 +1,20 @@
-<%@page import="form.FormInscription"%>
-<%@page import="model.Statut"%>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@page import="model.Membre"%>
-<%@ page import="form.FormMembre" %>
-<%@ page import="java.util.ArrayList" %>
+<%-- 
+    Document   : connexion
+    Created on : 10 oct. 2022, 11:35:36
+    Author     : sio2
+--%>
+
+<%@page import="form.FormUtilisateur"%>
+<%@page import="form.FormMembre"%>
 <%@include file="../entete.jsp" %>
+<!DOCTYPE html>
 <html>
 <br/>
 
 
 <%
     //Client client=(Client)request.getAttribute("client");
-    FormInscription form = (FormInscription)request.getAttribute("form");
+    FormUtilisateur form = (FormUtilisateur)request.getAttribute("form");
 %>
     <%@include file="../pied.jsp"%>
 
@@ -20,33 +23,33 @@
                     <div class="card-header">
                     <b>S'inscrire</b>
                     </div>
-<form class="form-inline" action="inscription" method="POST">
+<form class="form-inline" action="ajouter" method="POST">
     <ul class="list-group list-group-flush">
     <li class="list-group-item">Identifiant :
-    <input id="username" type="text" name="username" maxlength="20">
+    <input id="username" type="text" name="username" maxlength="70">
     <span style="color: blue;">${form.erreurs['identifiant']}</span>
     </li>
 
     
     <li class="list-group-item">Mot de passe :
-    <input id="password"  type="password"  name="password" maxlength="20">
-    <span style="color: blue;">${form.erreurs['password']}</span>
+    <input id="motDePasse"  type="password"  name="motDePasse" maxlength="20">
+    <span style="color: blue;">${form.erreurs['motdepasse']}</span>
     </li>
  
     
-    <!--<li class="list-group-item">Confirmation du Mot de passe :
-    <input id="password"  type="password"  name="password" maxlength="20">
-    <span style="color: blue;">${form.erreurs['password']}</span>
-    </li>-->
+    <li class="list-group-item">Confirmation du Mot de passe :
+    <input id="motDePasse"  type="password"  name="motDePasse" maxlength="20">
+    <span style="color: blue;">${form.erreurs['motdepasse']}</span>
+    </li>
     
     
     <li class="list-group-item">
-    <a href="../ServletConnexion/connexion" class="card-link">Se Connecter</a>
+    <a href="http://localhost:8080/normanzik/ServletUtilisateur/connexion" class="card-link">Se Connecter</a>
     </li>
     </ul>   
+</form> 
 </div>
-    </br>
-        <input class="btn btn-normanzik" type="submit" name="valider" id="valider" value="Valider"/>  
-</form>
+    <br><input class="btn btn-normanzik" type="submit" name="valider" id="valider" value="Valider"/>
+    
 </body>
 </html>

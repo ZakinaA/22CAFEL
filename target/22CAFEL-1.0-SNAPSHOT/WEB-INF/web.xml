@@ -19,22 +19,6 @@
         <servlet-name>ServletDispositif</servlet-name>
         <servlet-class>servlet.ServletDispositif</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ServletConcert</servlet-name>
-        <servlet-class>servlet.ServletConcert</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ServletConnexion</servlet-name>
-        <servlet-class>servlet.ServletConnexion</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ServletUtilisateur</servlet-name>
-        <servlet-class>servlet.ServletUtilisateur</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ServletFestival</servlet-name>
-        <servlet-class>servlet.ServletFestival</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>ServletGroupe</servlet-name>
         <url-pattern>/ServletGroupe/consulter</url-pattern>
@@ -66,22 +50,6 @@
     <servlet-mapping>
         <servlet-name>ServletDispositif</servlet-name>
         <url-pattern>/ServletDispositif/consulter</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletConcert</servlet-name>
-        <url-pattern>/ServletConcert/lister</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletConnexion</servlet-name>
-        <url-pattern>/ServletConnexion/connexion</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletFestival</servlet-name>
-        <url-pattern>/ServletFestival/lister</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletUtilisateur</servlet-name>
-        <url-pattern>/ServletUtilisateur/profil</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

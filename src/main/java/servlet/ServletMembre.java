@@ -5,9 +5,9 @@
 package servlet;
 
 import dao.DaoAdmin;
+import dao.DaoGroupe;
 import dao.DaoMembre;
-import dao.DaoMembre;
-import form.FormMembre;
+import form.FormGroupe;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Statut;
 import model.Genre;
-import model.Membre;
+import model.Groupe;
 import model.Instrument;
 import model.Membre;
 
@@ -127,22 +127,22 @@ public class ServletMembre extends HttpServlet {
    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        
-        FormMembre form = new FormMembre();
+        FormGroupe form = new FormGroupe();
 
-        /*Appel au traitement et à la validation de la requête, et récupération de l'objet en résultant */
-        Membre leMembreSaisi = form.ajouterMembre(request);
+        /* Appel au traitement et à la validation de la requête, et récupération de l'objet en résultant */
+        Groupe leGroupeSaisi = form.ajouterGroupe(request);
 
         /* Stockage du formulaire et de l'objet dans l'objet request */
         request.setAttribute( "form", form );
-        request.setAttribute( "pMembre", leMembreSaisi );
+        request.setAttribute( "pGroupe", leGroupeSaisi );
 
         if (form.getErreurs().isEmpty()){
             // Il n'y a pas eu d'erreurs de saisie, donc on renvoie la vue affichant les infos du groupe
-            Membre groupeAjoute = DaoMembre.ajouterMembre(connection, leMembreSaisi);
+            Groupe groupeAjoute = DaoGroupe.ajouterGroupe(connection, leGroupeSaisi);
 
             if (groupeAjoute != null ){
-                Membre leMembre = DaoMembre.getLeMembre(connection, leMembreSaisi.getId());
-                request.setAttribute("pMembre", leMembre);
+                Groupe leGroupe = DaoGroupe.getLeGroupe(connection, leGroupeSaisi.getId());
+                request.setAttribute("pGroupe", leGroupe);
                 this.getServletContext().getRequestDispatcher("/view/groupe/consulter.jsp" ).forward( request, response );
             }
             else
