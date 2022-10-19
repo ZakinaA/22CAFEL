@@ -53,8 +53,8 @@
     </table>
 </div>
         <br>
-    <a href="http://localhost:8080/normanzik/ServletGroupe/ajouter">
-        <button type="button" class="btn btn-normanzik">S'inscrire</button>
+    <a href="<% out.print(getServletContext().getContextPath()); %>/ServletGroupe/ajouter">
+        <button type="button" class="btn btn-normanzik">Ajouter son groupe</button>
     </a>
         
 </div>
