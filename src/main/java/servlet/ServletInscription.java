@@ -77,7 +77,6 @@ public class ServletInscription extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
     /**
      * Returns a short description of the servlet.
      *

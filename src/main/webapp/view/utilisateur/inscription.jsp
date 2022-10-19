@@ -37,19 +37,18 @@
     </li>
  
     
-    <li class="list-group-item">Confirmation du Mot de passe :
+    <!--<li class="list-group-item">Confirmation du Mot de passe :
     <input id="motDePasse"  type="password"  name="motDePasse" maxlength="20">
     <span style="color: blue;">${form.erreurs['motdepasse']}</span>
-    </li>
+    </li>-->
     
     
     <li class="list-group-item">
     <a href="http://localhost:8080/normanzik/ServletUtilisateur/connexion" class="card-link">Se Connecter</a>
     </li>
     </ul>   
-</form> 
 </div>
     <br><input class="btn btn-normanzik" type="submit" name="valider" id="valider" value="Valider"/>
-    
+</form>     
 </body>
 </html>

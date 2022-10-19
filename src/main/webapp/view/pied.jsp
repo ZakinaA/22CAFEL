@@ -27,12 +27,12 @@
 <footer class="footer">
      <table class="pied">
                     <tr>
-                        <td><a href="#">Mention legal</a></td>
-                        <td><a href="#">Politique de confidentialité</a></td>
-                        <td><a href="#">RGPD</a></td>
+                        <td><a href="footer/mentions.jsp">Mentions Légales</a></td>
+                        <td><a href="footer/politique.jsp">Politique de Confidentialité</a></td>
+                        <td><a href="#">Copyright 2022</a></td>
                         <td><a href="#">A Propos</a></td>
                         <td><a href="#">Contact</a></td>
-                        <td><a href="#">Copyright 2022</a></td>
+
                     </tr>
                 </table>
 </footer>
