@@ -9,7 +9,7 @@ import java.util.Map;
 import model.Statut;
 import model.Utilisateur;
 
-public class FormUtilisateur {
+public class FormInscription {
 
     private String resultat;
     private Map<String, String> erreurs      = new HashMap<String, String>();
@@ -31,14 +31,14 @@ public class FormUtilisateur {
     }
 
     //méthode de validation du champ de saisie nom
-    private void validationUsername( String username ) throws Exception {
-        if ( username != null && username.length() < 3 ) {
+    private void validationUsername( String identifiant ) throws Exception {
+        if ( identifiant != null && identifiant.length() < 3 ) {
             throw new Exception( "Le nom d'utilisateur doit contenir au moins 3 caractères." );
         }
     }
 
-    private void validationMotDePasse( String motDePasse) throws Exception {
-        if ( motDePasse != null && motDePasse.length() <6  ) {
+    private void validationMotDePasse( String mdp) throws Exception {
+        if ( mdp != null && mdp.length() <6  ) {
             throw new Exception( "le mot de passe doit contenir au moins 6 caractères." );
         }
     }
@@ -62,22 +62,22 @@ public class FormUtilisateur {
         Utilisateur unUtilisateur  = new Utilisateur();
 
         //récupération dans des variables des données saisies dans les champs de formulaire
-        String username = getDataForm( request, "username" );
-        String motDePasse = getDataForm( request, "motDePasse");
+        String identifiant = getDataForm( request, "identifiant" );
+        String mdp = getDataForm( request, "mdp");
 
         try {
-            validationUsername( username );
+            validationUsername( identifiant );
         } catch ( Exception e ) {
-            setErreur( "username", e.getMessage() );
+            setErreur( "identifiant", e.getMessage() );
         }
-         unUtilisateur.setMdp(motDePasse);
+         unUtilisateur.setIdentifiant(identifiant);
          
         try {
-            validationMotDePasse( motDePasse );
+            validationMotDePasse( mdp );
         } catch ( Exception e ) {
-            setErreur( "motDePasse", e.getMessage() );
+            setErreur( "mdp", e.getMessage() );
         }
-        unUtilisateur.setMdp(motDePasse);
+        unUtilisateur.setMdp(mdp);
         
         if ( erreurs.isEmpty() ) {
             resultat = "Succès de l'ajout.";
@@ -91,7 +91,8 @@ public class FormUtilisateur {
         return unUtilisateur ;
     }
     
-     private void validationLogin( String login ) throws Exception {
+     /*
+    private void validationLogin( String login ) throws Exception {
         if ( login == null) {
             throw new Exception( "Le login ne peut pas être null." );
         }
@@ -103,7 +104,7 @@ public class FormUtilisateur {
         }
     }
     
-    /*public Utilisateur connexion(HttpServletRequest request ) {
+    public Utilisateur connexion(HttpServletRequest request ) {
 
         Utilisateur unUtilisateur  = new Utilisateur();
 

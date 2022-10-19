@@ -4,7 +4,7 @@
     Author     : sio2
 --%>
 
-<%@page import="form.FormUtilisateur"%>
+<%@page import="form.FormInscription"%>
 <%@page import="form.FormMembre"%>
 <%@include file="../entete.jsp" %>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 
 <%
     //Client client=(Client)request.getAttribute("client");
-    FormUtilisateur form = (FormUtilisateur)request.getAttribute("form");
+    FormInscription form = (FormInscription)request.getAttribute("form");
 %>
     <%@include file="../pied.jsp"%>
 
@@ -23,26 +23,20 @@
                     <div class="card-header">
                     <b>S'inscrire</b>
                     </div>
-<form class="form-inline" action="ajouter" method="POST">
+<form class="form-inline" action="inscription" method="POST">
     <ul class="list-group list-group-flush">
     <li class="list-group-item">Identifiant :
-    <input id="username" type="text" name="username" maxlength="70">
+    <input id="identifiant" type="text" name="identifiant" maxlength="70">
     <span style="color: blue;">${form.erreurs['identifiant']}</span>
     </li>
 
     
     <li class="list-group-item">Mot de passe :
-    <input id="motDePasse"  type="password"  name="motDePasse" maxlength="20">
-    <span style="color: blue;">${form.erreurs['motdepasse']}</span>
+    <input id="mdp"  type="password"  name="mdp" maxlength="20">
+    <span style="color: blue;">${form.erreurs['mdp']}</span>
     </li>
  
-    
-    <!--<li class="list-group-item">Confirmation du Mot de passe :
-    <input id="motDePasse"  type="password"  name="motDePasse" maxlength="20">
-    <span style="color: blue;">${form.erreurs['motdepasse']}</span>
-    </li>-->
-    
-    
+   
     <li class="list-group-item">
     <a href="<%out.print(getServletContext().getContextPath());%>/ServletConnexion/connexion" class="card-link">Se Connecter</a>
     </li>

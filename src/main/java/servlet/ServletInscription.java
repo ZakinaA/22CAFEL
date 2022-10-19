@@ -4,6 +4,8 @@
  */
 package servlet;
 
+import dao.DaoUtilisateur;
+import form.FormInscription;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -11,6 +13,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Utilisateur;
+import static test.ConnexionBdd.connection;
 
 /**
  *
@@ -75,7 +79,20 @@ public class ServletInscription extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        FormInscription form = new FormInscription();
+        
+        
+        Utilisateur lUtilisateurSaisi = form.ajouterUtilisateur(request);
+        request.setAttribute( "form", form );
+        request.setAttribute( "pUtilisateur", lUtilisateurSaisi );
+        
+        if (form.getErreurs().isEmpty()){
+            Utilisateur Utilisateurins = DaoUtilisateur.ajouterUtilisateur(connection, lUtilisateurSaisi);
+            if(Utilisateurins != null){
+                this.getServletContext().getRequestDispatcher("/view/utilisateur/inscription.jsp" ).forward( request, response );
+            }
+        this.getServletContext().getRequestDispatcher("/view/utilisateur/inscription.jsp" ).forward( request, response );
+    }
     }
     /**
      * Returns a short description of the servlet.
@@ -88,3 +105,4 @@ public class ServletInscription extends HttpServlet {
     }// </editor-fold>
 
 }
+

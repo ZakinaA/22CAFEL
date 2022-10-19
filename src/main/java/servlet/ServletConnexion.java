@@ -7,7 +7,7 @@ package servlet;
 import dao.DaoAdmin;
 import dao.DaoUtilisateur;
 import form.FormConnexion;
-import form.FormUtilisateur;
+import form.FormInscription;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
