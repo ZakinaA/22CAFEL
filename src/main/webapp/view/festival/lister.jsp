@@ -25,37 +25,25 @@
 
 <div class="card bg-normanzik">
                     <div class="card-header">
-                    <b>Les festivals :</b>
+                    <b>Festivals :</b>
                     </div>
     <table  class="table table-curved table-normanzik">
         <thead>
         <tr>
             <th>Nom</th>
-            <th>Lieu</th>
-            <th>Début</th>
-            <th>Fin</th>
+          
 
         </tr>
         </thead>
         <tbody>
         <tr>
             <%
-                for (Festival unFestival : lesFestivals) {
+                for (Festival unFestival : lesFestivals)
+                {
                     out.println("<tr>");
                     out.println("<td>");
+                    out.println("<a href ='../ServletFestival/consulter?fest_id=" + unFestival.getFest_id() + "'>");
                     out.println(unFestival.getFest_nom());
-                    out.println("</td>");
-                    
-                    out.println("<td>");
-                    out.println(unFestival.getFest_lieu());
-                    out.println("</td>");
-                    
-                    out.println("<td>");
-                    out.println(unFestival.getFest_dateDebut());
-                    out.println("</td>");
-                    
-                    out.println("<td>");
-                    out.println(unFestival.getFest_dateFin());
                     out.println("</td>");
                     
                     

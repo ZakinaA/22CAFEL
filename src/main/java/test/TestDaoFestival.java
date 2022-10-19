@@ -35,7 +35,7 @@ public class TestDaoFestival {
         
         */
     
-    ArrayList<Festival> lesFestivalgrp = DaoFestival.getLesFestivalsByGroupe(con, 4);
+    ArrayList<Festival> lesFestivalgrp = DaoFestival.getLesFestivalsByGroupe(con, 2);
         for (int i=0; i<lesFestivalgrp.size(); i++){
             Festival festgr = lesFestivalgrp.get(i);
             System.out.println("Le festival " + festgr.getFest_nom() + " est particpé par "+ festgr.getGroupe().getNom()  );

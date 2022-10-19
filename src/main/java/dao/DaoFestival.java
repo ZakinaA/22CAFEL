@@ -4,6 +4,8 @@
  */
 package dao;
 
+
+import static dao.DaoGroupe.getLesGroupesByFestival;
 import static dao.DaoGroupe.requete;
 import static dao.DaoGroupe.rs;
 import static dao.DaoMembre.getLeMembreContactByGroupe;
@@ -107,14 +109,14 @@ public class DaoFestival {
         return lesFestivals ;
     }
      
-     /*public static Festival getLeFestival(Connection connection, int idUtilisateur){
+     public static Festival getLeFestival(Connection connection, int idFestival){
 
         Festival leFestival = new Festival();
         try
         {
             //preparation de la requete
             requete=connection.prepareStatement("select * from festival where fest_id=?");
-            requete.setInt(1, idUtilisateur);
+            requete.setInt(1, idFestival);
             System.out.println("Requete" + requete);
 
             //executer la requete
@@ -129,6 +131,11 @@ public class DaoFestival {
                 leFestival.setFest_dateFin(rs.getString("fest_dateFin"));
                 leFestival.setFest_lieu(rs.getString("fest_lieu"));
                 
+               ArrayList<Groupe> lesGroupes = getLesGroupesByFestival(connection, idFestival);
+
+                
+               
+               leFestival.setLesGroupes(lesGroupes);
             }
         }
         catch (SQLException e)
@@ -138,5 +145,5 @@ public class DaoFestival {
         }
         return leFestival;
     }
-*/
+
 }

@@ -26,6 +26,7 @@ public class Groupe {
     private ArrayList<Titre> lesTitres;
     private ArrayList<Membre> lesMembres;
     private Membre leMembreContact;
+    private ArrayList<Dispositif> lesDispositifs;
     private ArrayList<Concert> lesConcerts;
     private ArrayList<Festival> lesFestivals;
 
@@ -187,4 +188,15 @@ public class Groupe {
         }
         lesFestivals.add(unFestival);
     }
+
+    public ArrayList<Dispositif> getLesDispositifs() {
+        return lesDispositifs;
+    }
+
+    public void setLesDispositifs(ArrayList<Dispositif> lesDispositifs) {
+        this.lesDispositifs = lesDispositifs;
+    }
+        
+        
+        
 }

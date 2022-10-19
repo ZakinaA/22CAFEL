@@ -80,6 +80,10 @@
         <url-pattern>/ServletFestival/lister</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>ServletFestival</servlet-name>
+        <url-pattern>/ServletFestival/consulter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ServletUtilisateur</servlet-name>
         <url-pattern>/ServletUtilisateur/profil</url-pattern>
     </servlet-mapping>

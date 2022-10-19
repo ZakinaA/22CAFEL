@@ -7,6 +7,7 @@ package servlet;
 
 import dao.DaoAdmin;
 import dao.DaoFestival;
+import dao.DaoGenre;
 import dao.DaoGroupe;
 import dao.Utilitaire;
 import form.FormGroupe;
@@ -23,6 +24,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Festival;
+import model.Genre;
+import model.Groupe;
 
 
 /**
@@ -94,7 +97,7 @@ public class ServletFestival extends HttpServlet {
         
         System.out.println("servletfestival url="+url);
 
-        //Affichage de tous les dispositifs (en indiquant le libellé du genre musical)
+        //Affichage de tous les festivals (en indiquant le libellé du genre musical)
         if(url.equals("/normanzik/ServletFestival/lister")){
              System.out.println("servletFestival LISTER");
             ArrayList<Festival> lesFestivals = DaoFestival.getLesFestivals(connection);
@@ -102,7 +105,23 @@ public class ServletFestival extends HttpServlet {
             this.getServletContext().getRequestDispatcher("/view/festival/lister.jsp" ).forward( request, response );
         }
         
-        // Affichage du groupe selectionné (depuis la fonctionnalité lister)
+        // Affichage du festival selectionée (depuis la fonctionnalité lister)
+        
+        if(url.equals("/normanzik/ServletFestival/consulter")){
+
+            int fest_id = Integer.parseInt(request.getParameter("fest_id"));
+            Festival leFestival = DaoFestival.getLeFestival(connection, fest_id);
+            request.setAttribute("pFestival", leFestival);
+            this.getServletContext().getRequestDispatcher("/view/festival/consulter.jsp" ).forward( request, response );
+        }
+        
+        if(url.equals("/normanzik/ServletGroupe/consulter")){
+
+            int idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
+            Groupe leGroupe = DaoGroupe.getLeGroupe(connection, idGroupe);
+            request.setAttribute("pGroupe", leGroupe);
+            this.getServletContext().getRequestDispatcher("/view/groupe/consulter.jsp" ).forward( request, response );
+        }
 
     }
 
