@@ -74,25 +74,23 @@
 <body>
     <header class="header">
         <a class="tn" href=""><h1>Norman'Zik</h1></a>
-        <%
-        
-            if(session.getAttribute("identifiant") == null){
-                  out.println("<a href='./ServletConnexion/connexion'><img class='imgen' src='./img/img_entete.png'></a>"); 
-            }
-            else{
-             out.println("<a href='./ServletUtilisateur/profil'><img class='imgen' src='./img/img_entete.png'></a>"); 
-            }%>
+         <%
+            if(session.getAttribute("identifiant") == null){%>
+                <a href="<%out.print(getServletContext().getContextPath());%>/ServletConnexion/connexion"><img class='imgen' src='img/img_entete.png'></a>
+           <% }
+            else{%>
+                <a href="<%out.print(getServletContext().getContextPath());%>/ServletUtilisateur/profil"><img class='imgen' src='img/img_entete.png'></a>
+          <%  }%>
    
             
             
             <table class="entete">
                     <tr>
-                        <td><a href="./ServletConcert/lister">Concerts</a></td>
-                        <td><a href="./ServletFestival/lister">Festivals</a></td>
-                        <td><a href="./ServletGroupe/lister">Groupes</a></td>
+                        <td><a href="<% out.print(getServletContext().getContextPath()); %>/ServletConcert/lister">Concerts</a></td>
+                        <td><a href="<% out.print(getServletContext().getContextPath()); %>/ServletFestival/lister">Festivals</a></td>
+                        <td><a href="<% out.print(getServletContext().getContextPath()); %>/ServletGroupe/lister">Groupes</a></td>
                     </tr>
                 </table>
-            
             
  
     </header>
@@ -108,20 +106,20 @@
     <h6 class="card-subtitle mb-2 text-muted">Votre plateforme de musique !</h6>
     <p class="card-text"></p>
     <p class="card-text">Bienvenue sur Norman'Zik :</p>
-    <a href="http://localhost:8080/normanzik/ServletGroupe/lister" class="card-link">Voir les groupes</a>
-    <a href="http://localhost:8080/normanzik/ServletConcert/lister" class="card-link">Voir les concerts</a>
+    <a href="<% out.print(getServletContext().getContextPath()); %>/ServletGroupe/lister" class="card-link">Voir les groupes</a>
+    <a href="<% out.print(getServletContext().getContextPath()); %>/ServletConcert/lister" class="card-link">Voir les concerts</a>
   </div>
 </div>
 </div>
     <footer class="footer">
      <table class="pied">
                     <tr>
-                        <td><a href="#">Mention legal</a></td>
-                        <td><a href="#">Politique de confidentialité</a></td>
-                        <td><a href="#">RGPD</a></td>
+                        <td><a href="<%out.print(getServletContext().getContextPath());%>/ServletRedirection/mentions">Mentions Légales</a></td>
+                        <td><a href="<%out.print(getServletContext().getContextPath());%>/ServletRedirection/politique">Politique de Confidentialité</a></td>
+                        <td><a href="#">Copyright 2022</a></td>
                         <td><a href="#">A Propos</a></td>
                         <td><a href="#">Contact</a></td>
-                        <td><a href="#">Copyright 2022</a></td>
+
                     </tr>
                 </table>
 </footer>

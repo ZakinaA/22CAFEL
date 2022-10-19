@@ -91,7 +91,7 @@ public class ServletConcert extends HttpServlet {
         System.out.println("servlerconcert url="+url);
 
         //Affichage de tous les dispositifs (en indiquant le libellé du genre musical)
-        if(url.equals("/normanzik/ServletConcert/lister")){
+        if(url.equals(getServletContext().getContextPath()+"/ServletConcert/lister")){
              System.out.println("servlerConcert LISTER");
             ArrayList<Concert> lesConcerts = DaoConcert.getLesConcerts(connection);
             request.setAttribute("pLesConcerts", lesConcerts);

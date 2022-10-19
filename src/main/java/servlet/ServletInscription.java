@@ -59,7 +59,7 @@ public class ServletInscription extends HttpServlet {
             throws ServletException, IOException {
         String url = request.getRequestURI();
         System.out.println("servlerinscription url="+url);
-        if(url.equals("/normanzik/ServletInscription/inscription")){
+        if(url.equals(getServletContext().getContextPath()+"/ServletInscription/inscription")){
             this.getServletContext().getRequestDispatcher("/view/utilisateur/inscription.jsp" ).forward( request, response );
         }
     }

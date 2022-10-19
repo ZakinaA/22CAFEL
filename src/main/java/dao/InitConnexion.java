@@ -45,11 +45,11 @@ public class InitConnexion implements ServletContextListener {
         try
         {
             //obtention de la connexion
-            connection = DriverManager.getConnection ("jdbc:mariadb://127.0.0.1:3307/normanzik","root","");
+            connection = DriverManager.getConnection ("jdbc:mariadb://172.20.177.250:3306/CAFEL","ADM_CAFEL","mpCafel");
          
             //sauvegarder la connexion dans le context
             servletContext.setAttribute("connection",connection);
-            System.out.println("jdbc:mariadb://127.0.0.1:3306 - connexion ");
+            System.out.println("jdbc:mariadb://172.20.177.250:3306- connexion ");
         }
         catch (SQLException e)
         {

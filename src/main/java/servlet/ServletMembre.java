@@ -97,7 +97,7 @@ public class ServletMembre extends HttpServlet {
         }*/
 
         // Affichage du membre selectionné (depuis la fonctionnalité lister)
-        if(url.equals("/normanzik/ServletMembre/consulter")){
+        if(url.equals(getServletContext().getContextPath()+"/ServletMembre/consulter")){
 
             int idMembre = Integer.parseInt(request.getParameter("idMembre"));
             Membre leMembre = DaoMembre.getLeMembre(connection, idMembre);
@@ -105,7 +105,7 @@ public class ServletMembre extends HttpServlet {
             this.getServletContext().getRequestDispatcher("/view/membre/consulter.jsp" ).forward( request, response );
         }
 
-        if(url.equals("/normanzik/ServletMembre/ajouter"))
+        if(url.equals(getServletContext().getContextPath()+"/ServletMembre/ajouter"))
         {
              ArrayList<Instrument> lesInstruments = DaoAdmin.getLesInstruments(connection);
                 request.setAttribute("pLesInstruments", lesInstruments);

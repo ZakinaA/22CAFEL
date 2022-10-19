@@ -4,12 +4,15 @@
  */
 package dao;
 
+import static dao.DaoGroupe.getLesGroupesByMembre;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import model.Groupe;
 import model.Instrument;
+import model.JouerGroupe;
 import model.Membre;
 import model.Statut;
 
@@ -55,7 +58,10 @@ public class DaoMembre {
                 
                 leMembre.setUnInstrument(instru);
                 leMembre.setUnStatut(leStatut);
-
+                
+                ArrayList<JouerGroupe> lesGroupes = getLesGroupesByMembre(connection, idMembre);
+                
+                leMembre.setLesGroupes(lesGroupes);
             }
         }
         catch (SQLException e)

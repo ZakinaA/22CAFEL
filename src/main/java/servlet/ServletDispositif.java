@@ -84,7 +84,7 @@ public class ServletDispositif extends HttpServlet {
         System.out.println("servlerdispositif url="+url);
 
         //Affichage de tous les dispositifs (en indiquant le libellé du genre musical)
-        if(url.equals("/normanzik/ServletDispositif/lister")){
+        if(url.equals(getServletContext().getContextPath()+"/ServletDispositif/lister")){
              System.out.println("servlerdispositif LISTER");
             ArrayList<Dispositif> lesDispositifs = DaoAdmin.getLesDispositifs(connection);
             request.setAttribute("pLesDispositifs", lesDispositifs);
@@ -92,7 +92,7 @@ public class ServletDispositif extends HttpServlet {
         }
         
         // Affichage du groupe selectionné (depuis la fonctionnalité lister)
-        if(url.equals("/normanzik/ServletDispositif/consulter")){
+        if(url.equals(getServletContext().getContextPath()+"/ServletDispositif/consulter")){
 
             int idDispositif = Integer.parseInt(request.getParameter("idDispositif"));
             Dispositif leDispositif = DaoDispositif.getLeDispositif(connection, idDispositif);

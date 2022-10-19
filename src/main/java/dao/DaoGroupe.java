@@ -20,6 +20,7 @@ import model.Festival;
 import model.Genre;
 import model.Groupe;
 import model.Instrument;
+import model.JouerGroupe;
 import model.Lieu;
 import model.Membre;
 import model.Statut;
@@ -227,12 +228,12 @@ public class DaoGroupe {
     
     
     
-    public static ArrayList<Groupe> getLesGroupesByMembre(Connection connection, int idMembre){
-        ArrayList<Groupe> lesGroupes = new  ArrayList<Groupe>();
+    public static ArrayList<JouerGroupe> getLesGroupesByMembre(Connection connection, int idMembre){
+        ArrayList<JouerGroupe> lesGroupesDuMembre = new ArrayList<JouerGroupe>();
         try
         {
             //preparation de la requete
-            requete=connection.prepareStatement("select * from groupe G, membre M, membregroupe MG where MG.gpe_id = G.gpe_id and MG.mem_id=M.mem_id and M.mem_id=?");
+            requete=connection.prepareStatement("select * from groupe G, membre M, jouergroupe JG , instrument I where I.instru_id=JG.instru_id and JG.gpe_id = G.gpe_id and JG.mem_id=M.mem_id and M.mem_id=?");
             requete.setInt(1, idMembre);
             System.out.println("Requete" + requete);
 
@@ -242,13 +243,20 @@ public class DaoGroupe {
             //On hydrate l'objet métier Groupe et sa relation Genre avec les résultats de la requête
             while ( rs.next() ) {
 
-
                 Groupe leGroupe = new Groupe();
                 leGroupe.setId(rs.getInt("gpe_id"));
                 leGroupe.setNom(rs.getString("gpe_nom"));
                 leGroupe.setDateCreation(rs.getString("gpe_dateCreation"));
-
-                lesGroupes.add(leGroupe);
+                
+                Instrument leInstrument = new Instrument();
+                leInstrument.setId(rs.getInt("instru_id"));
+                leInstrument.setLibelle(rs.getString("instru_libelle"));
+                
+                JouerGroupe leGroupeDuMembre = new JouerGroupe();
+                leGroupeDuMembre.setlInstrument(leInstrument);
+                leGroupeDuMembre.setLeGroupe(leGroupe);
+                
+                lesGroupesDuMembre.add(leGroupeDuMembre);
             }
         }
         catch (SQLException e)
@@ -256,7 +264,7 @@ public class DaoGroupe {
             e.printStackTrace();
             //out.println("Erreur lors de l’établissement de la connexion");
         }
-        return lesGroupes ;
+        return lesGroupesDuMembre;
     }
     
     

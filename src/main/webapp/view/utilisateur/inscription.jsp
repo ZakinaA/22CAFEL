@@ -44,7 +44,7 @@
     
     
     <li class="list-group-item">
-    <a href="http://localhost:8080/normanzik/ServletUtilisateur/connexion" class="card-link">Se Connecter</a>
+    <a href="<%out.print(getServletContext().getContextPath());%>/ServletConnexion/connexion" class="card-link">Se Connecter</a>
     </li>
     </ul>   
 </div>

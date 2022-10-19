@@ -38,7 +38,7 @@
     <span style="color: blue;">${form.erreurs['mdp']}</span>
     </li>
     <li class="list-group-item">
-    <a href="http://localhost:8080/normanzik/ServletInscription/inscription" class="card-link">S'inscrire</a>
+    <a href="<%out.print(getServletContext().getContextPath());%>/ServletInscription/inscription" class="card-link">S'inscrire</a>
     </li>
     </ul>
     </div>

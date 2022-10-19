@@ -15,7 +15,7 @@ public class Membre {
     private int id;
     private String nom;
     private String prenom;
-    private ArrayList<Groupe> lesGroupes;
+    private ArrayList<JouerGroupe> lesGroupes;
     private ArrayList<Groupe> lesGroupesContact;
     private Instrument lInstrument;
     private Statut leStatut;
@@ -47,11 +47,11 @@ public class Membre {
         this.prenom = prenom;
     }
 
-    public ArrayList<Groupe> getLesGroupes() {
+    public ArrayList<JouerGroupe> getLesGroupes() {
         return lesGroupes;
     }
 
-    public void setLesGroupes(ArrayList<Groupe> lesGroupes) {
+    public void setLesGroupes(ArrayList<JouerGroupe> lesGroupes) {
         this.lesGroupes = lesGroupes;
     }
 
@@ -63,7 +63,7 @@ public class Membre {
         this.lesGroupesContact = lesGroupesContact;
     }
     
-    public void addUngroupe(Groupe unGroupe){
+    public void addUngroupe(JouerGroupe unGroupe){
         if (lesGroupes == null){
             lesGroupes = new ArrayList<>();
         }
@@ -74,7 +74,7 @@ public class Membre {
         if (lesGroupesContact == null){
             lesGroupesContact = new ArrayList<>();
         }
-        lesGroupes.add(unGroupeContact);
+        lesGroupesContact.add(unGroupeContact);
     }
 
     public Instrument getUnInstrument() {

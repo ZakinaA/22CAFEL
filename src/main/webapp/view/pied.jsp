@@ -27,8 +27,8 @@
 <footer class="footer">
      <table class="pied">
                     <tr>
-                        <td><a href="footer/mentions.jsp">Mentions Légales</a></td>
-                        <td><a href="footer/politique.jsp">Politique de Confidentialité</a></td>
+                        <td><a href="<%out.print(getServletContext().getContextPath());%>/ServletRedirection/mentions">Mentions Légales</a></td>
+                        <td><a href="<%out.print(getServletContext().getContextPath());%>/ServletRedirection/politique">Politique de Confidentialité</a></td>
                         <td><a href="#">Copyright 2022</a></td>
                         <td><a href="#">A Propos</a></td>
                         <td><a href="#">Contact</a></td>

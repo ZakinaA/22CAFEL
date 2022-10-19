@@ -98,7 +98,7 @@ public class ServletConnexion extends HttpServlet {
 
         // Affichage du membre selectionné (depuis la fonctionnalité inscription)
         
-        if(url.equals("/normanzik/ServletConnexion/connexion")){
+        if(url.equals(getServletContext().getContextPath()+"/ServletConnexion/connexion")){
             this.getServletContext().getRequestDispatcher("/view/utilisateur/connexion.jsp" ).forward( request, response );
         }
         
@@ -147,7 +147,7 @@ public class ServletConnexion extends HttpServlet {
                 session.setAttribute("membrePrenom", utilisateurCo.getMembre().getPrenom());
         
                
-                response.sendRedirect("/normanzik/index.jsp");
+                response.sendRedirect("../index.jsp");
 
     
             }

@@ -32,6 +32,10 @@
         <servlet-class>servlet.ServletUtilisateur</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ServletRedirection</servlet-name>
+        <servlet-class>servlet.ServletRedirection</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ServletFestival</servlet-name>
         <servlet-class>servlet.ServletFestival</servlet-class>
     </servlet>
@@ -94,6 +98,14 @@
     <servlet-mapping>
         <servlet-name>ServletInscription</servlet-name>
         <url-pattern>/ServletInscription/inscription</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletRedirection</servlet-name>
+        <url-pattern>/ServletRedirection/mentions</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletRedirection</servlet-name>
+        <url-pattern>/ServletRedirection/politique</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

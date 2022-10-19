@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="../entete.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -6,9 +6,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Politique de Confidentialité</title>
     </head>
-    <body>
+    <body> <div class="container px-4 px-lg-5 custom-container">
+<br/>
+
+<div class="card bg-normanzik">
         <h1>Politique de Confidentialité</h1>
-        
+       
         <p>
             <strong>ARTICLE 1 : PRÉAMBULE</strong><br><br>
 
@@ -78,11 +81,11 @@
             </ul>
             
             
-            
+</div>
             
             
         
         </p>
-        <%@include file="../pied.jsp"%>
-    </body>
+ <%@include file="../pied.jsp"%>
+
 </html>

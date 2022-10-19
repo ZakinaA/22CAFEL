@@ -58,20 +58,20 @@
     <header class="header">
         <a class="tn" href="../index.jsp"><h1>Norman'Zik</h1></a>
         <%
-            if(session.getAttribute("identifiant") == null){
-                  out.println("<a href='../ServletConnexion/connexion'><img class='imgen' src='../img/img_entete.png'></a>"); 
-            }
-            else{
-             out.println("<a href='../ServletUtilisateur/profil'><img class='imgen' src='../img/img_entete.png'></a>"); 
-            }%>
+            if(session.getAttribute("identifiant") == null){%>
+                <a href="<%out.print(getServletContext().getContextPath());%>/ServletConnexion/connexion"><img class='imgen' src='../img/img_entete.png'></a>
+           <% }
+            else{%>
+                <a href="<%out.print(getServletContext().getContextPath());%>/ServletUtilisateur/profil"><img class='imgen' src='../img/img_entete.png'></a>
+          <%  }%>
    
             
             
             <table class="entete">
                     <tr>
-                        <td><a href="../ServletConcert/lister">Concerts</a></td>
-                        <td><a href="../ServletFestival/lister">Festivals</a></td>
-                        <td><a href="../ServletGroupe/lister">Groupes</a></td>
+                        <td><a href="<% out.print(getServletContext().getContextPath()); %>/ServletConcert/lister">Concerts</a></td>
+                        <td><a href="<% out.print(getServletContext().getContextPath()); %>/ServletFestival/lister">Festivals</a></td>
+                        <td><a href="<% out.print(getServletContext().getContextPath()); %>/ServletGroupe/lister">Groupes</a></td>
                     </tr>
                 </table>
             

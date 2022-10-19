@@ -98,7 +98,7 @@ public class ServletFestival extends HttpServlet {
         System.out.println("servletfestival url="+url);
 
         //Affichage de tous les festivals (en indiquant le libellé du genre musical)
-        if(url.equals("/normanzik/ServletFestival/lister")){
+        if(url.equals(getServletContext().getContextPath()+"/ServletFestival/lister")){
              System.out.println("servletFestival LISTER");
             ArrayList<Festival> lesFestivals = DaoFestival.getLesFestivals(connection);
             request.setAttribute("pLesFestivals", lesFestivals);
@@ -107,7 +107,7 @@ public class ServletFestival extends HttpServlet {
         
         // Affichage du festival selectionée (depuis la fonctionnalité lister)
         
-        if(url.equals("/normanzik/ServletFestival/consulter")){
+        if(url.equals(getServletContext().getContextPath()+"/ServletFestival/consulter")){
 
             int fest_id = Integer.parseInt(request.getParameter("fest_id"));
             Festival leFestival = DaoFestival.getLeFestival(connection, fest_id);
@@ -115,13 +115,6 @@ public class ServletFestival extends HttpServlet {
             this.getServletContext().getRequestDispatcher("/view/festival/consulter.jsp" ).forward( request, response );
         }
         
-        if(url.equals("/normanzik/ServletGroupe/consulter")){
-
-            int idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
-            Groupe leGroupe = DaoGroupe.getLeGroupe(connection, idGroupe);
-            request.setAttribute("pGroupe", leGroupe);
-            this.getServletContext().getRequestDispatcher("/view/groupe/consulter.jsp" ).forward( request, response );
-        }
 
     }
 
