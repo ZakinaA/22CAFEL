@@ -35,6 +35,10 @@
         <servlet-name>ServletFestival</servlet-name>
         <servlet-class>servlet.ServletFestival</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletInscription</servlet-name>
+        <servlet-class>servlet.ServletInscription</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletGroupe</servlet-name>
         <url-pattern>/ServletGroupe/consulter</url-pattern>
@@ -86,6 +90,10 @@
     <servlet-mapping>
         <servlet-name>ServletUtilisateur</servlet-name>
         <url-pattern>/ServletUtilisateur/profil</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletInscription</servlet-name>
+        <url-pattern>/ServletInscription/inscription</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
