@@ -22,14 +22,14 @@
             <ul>
                 <li>La manière dont sont collectées et traitées leurs données à caractère personnel. Doivent être considérées comme données personnelles toutes les données étant
                     susceptibles d'identifier un utilisateur. Il s'agit notamment du prénom et du nom, de l'âge, de l'adresse postale, l'adresse mail, la localisation de
-                    l'utilisateur ou encore son adresse IP.</li><br><br>
+                    l'utilisateur ou encore son adresse IP.</li><br>
 
-                <li>Quels sont les droits des utlisateurs concernant ces données.</li><br><br>
+                <li>Quels sont les droits des utlisateurs concernant ces données.</li><br>
 
                 <li>Qui est responsable du traitement des données à caractère personnel
-                collectées et traitées.</li><br><br>
+                collectées et traitées.</li><br>
 
-                <li>À qui ces données sont transmises.</li><br><br>
+                <li>À qui ces données sont transmises.</li><br>
                 
                 <li>Eventuellement, la politique du site en matière de fichiers cookies.</li><br><br>
             </ul>
@@ -46,16 +46,16 @@
             
             <ul>
                 <li>Licéité, loyauté et transparence : les données ne peuvent être collectées et traitées qu'avec le consentement de l'utilisateur propriétaire des données.
-                </li><br><br>
+                </li><br>
 
                 <li>Finalités limitées : la collecte et le traitement des données sont exécutés pour répondre à un ou plusieurs objectifs déterminés dans les présentes conditions
-                    générales d'utilisation.</li><br><br>
+                    générales d'utilisation.</li><br>
 
                 <li>Minimisation de la collecte et du traitement des données : seules les données nécessaires à la bonne exécution des objectifs poursuivis par le site sont
-                    collectées.</li><br><br>
+                    collectées.</li><br>
 
                 <li>Conservation des données réduites dans le temps : les données sont conservées pour une durée limitée, dont l'utilisateur est informé. Lorsque cette information
-                    ne peut pas être communiquée, l'utilisateur est informé des critères utilisés pour déterminer la durée de conservation.</li><br><br>
+                    ne peut pas être communiquée, l'utilisateur est informé des critères utilisés pour déterminer la durée de conservation.</li><br>
                 
                 <li>Intégrité et confidentialité des données collectées et traitées : le responsable du traitement des données s'engage à garantir l'intégrité et la confidentialité
                     des données collectées.</li><br><br>
@@ -65,16 +65,15 @@
             pourront intervenir que s'ils respectent au moins l'une des conditions ci-après énumérées :<br><br>
 
             <ul>
-                <li>L'utilisateur a expressément consenti au traitement.</li><br><br>
+                <li>L'utilisateur a expressément consenti au traitement.</li><br>
 
-                <li>Le traitement est nécessaire à la bonne exécution d'un contrat.</li><br><br>
+                <li>Le traitement est nécessaire à la bonne exécution d'un contrat.</li><br>
 
-                <li>Le traitement répond à une obligation légale.</li><br><br>
+                <li>Le traitement répond à une obligation légale.</li><br>
 
-                <li>Le traitement s'explique par une nécessité liée à la sauvegarde des intérêts vitaux de la personne concernée ou d'une autre personne physique.</li><br><br>
+                <li>Le traitement s'explique par une nécessité liée à la sauvegarde des intérêts vitaux de la personne concernée ou d'une autre personne physique.</li><br>
                 
                 <li>Le traitement peut s'expliquer par une nécessité liée à l'exécution d'une mission d'intérêt public ou qui relève de l'exercice de l'autorité publique.</li><br>
-                <br>
                 
                 <li>Le traitement et la collecte des données à caractère personnel sont nécessaires aux fins des intérêts légitimes et privés poursuivis par le responsable du
                     traitement ou par un tiers.</li><br><br>
@@ -86,6 +85,6 @@
             
         
         </p>
- <%@include file="../pied.jsp"%>
-
+    </body>
+    <%@include file="../pied.jsp"%>
 </html>
