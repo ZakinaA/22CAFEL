@@ -141,7 +141,10 @@ public class ServletConnexion extends HttpServlet {
 
                 session.setAttribute("identifiant", identifiant);
                 session.setAttribute("role", utilisateurCo.getRoleUtilisateur().getId());
-                session.setAttribute("membre", utilisateurCo.getMembre());
+                session.setAttribute("roleLibelle", utilisateurCo.getRoleUtilisateur().getLibelle());
+                session.setAttribute("membre", utilisateurCo.getMembre().getId());
+                session.setAttribute("membreNom", utilisateurCo.getMembre().getNom());
+                session.setAttribute("membrePrenom", utilisateurCo.getMembre().getPrenom());
         
                
                 response.sendRedirect("/normanzik/index.jsp");

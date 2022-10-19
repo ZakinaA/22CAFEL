@@ -74,9 +74,13 @@ public class DaoUtilisateur {
                 
                 Membre leMembre = new Membre();
                 leMembre.setId(rs.getInt("mem_id"));
+                leMembre.setNom(rs.getString("mem_nom"));
+                leMembre.setPrenom(rs.getString("mem_prenom"));
                 
                 RoleUtilisateur leRole = new RoleUtilisateur();
                 leRole.setId(rs.getInt("uti_idRole"));
+                leRole.setLibelle(rs.getString("roluti_libelle"));
+                
                 
                 leUtilisateur.setMembre(leMembre);
                 leUtilisateur.setRoleUtilisateur(leRole);

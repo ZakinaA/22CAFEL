@@ -5,6 +5,7 @@
 package servlet;
 
 import dao.DaoAdmin;
+import dao.DaoMembre;
 import dao.DaoUtilisateur;
 import form.FormConnexion;
 import form.FormUtilisateur;
@@ -23,6 +24,7 @@ import javax.servlet.http.HttpSession;
 import model.Groupe;
 import model.Statut;
 import model.Instrument;
+import model.Membre;
 import model.Utilisateur;
 
 /**
