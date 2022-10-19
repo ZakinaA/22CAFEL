@@ -145,5 +145,49 @@ public class DaoFestival {
         }
         return leFestival;
     }
+     
+     public static Festival ajouterFestival(Connection connection, Festival unFestival){
+        int idGenere = -1;
+        try
+        {  
+            System.out.println("AJOUTER GROUPE DAO GROUPE");
+            //preparation de la requete
+            // gpe_id (clé primaire de la table groupe) est en auto_increment,donc on ne renseigne pas cette valeur
+            // le paramètre RETURN_GENERATED_KEYS est ajouté à la requête afin de pouvoir récupérer l'id généré par la bdd (voir ci-dessous)
+            // supprimer ce paramètre en cas de requête sans auto_increment.
+            requete=connection.prepareStatement("INSERT INTO FESTIVAL ( fest_nom, fest_dateDebut, fest_dateFin, fest_lieu)\n" +
+                    "VALUES (?,?,?,?)", requete.RETURN_GENERATED_KEYS );
+            requete.setString(1, unFestival.getFest_nom());
+            requete.setString(2, unFestival.getFest_dateDebut());
+            requete.setString(3, unFestival.getFest_dateFin());
+            requete.setString(4, unFestival.getFest_lieu());
+
+            System.out.println("requeteInsertion=" + requete);
+            /* Exécution de la requête */
+            int resultatRequete = requete.executeUpdate();
+            System.out.println("resultatrequete=" + resultatRequete);
+
+            // Récupération de id auto-généré par la bdd dans la table groupe
+            rs = requete.getGeneratedKeys();
+            while ( rs.next() ) {
+                idGenere = rs.getInt( 1 );
+                unFestival.setFest_id(idGenere);
+            }
+
+            // si le résultat de la requete est différent de 1, c'est que la requête a échoué.
+            // Dans ce cas, on remet l'objet groupe à null
+            if (resultatRequete != 1){
+                unFestival= null;
+            }
+
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+            //out.println("Erreur lors de l’établissement de la connexion");
+            unFestival= null;
+        }
+        return unFestival ;
+    }
 
 }

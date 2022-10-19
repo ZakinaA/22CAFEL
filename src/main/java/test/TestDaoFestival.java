@@ -35,14 +35,24 @@ public class TestDaoFestival {
         
         */
     
-    ArrayList<Festival> lesFestivalgrp = DaoFestival.getLesFestivalsByGroupe(con, 2);
+   /* ArrayList<Festival> lesFestivalgrp = DaoFestival.getLesFestivalsByGroupe(con, 2);
         for (int i=0; i<lesFestivalgrp.size(); i++){
             Festival festgr = lesFestivalgrp.get(i);
             System.out.println("Le festival " + festgr.getFest_nom() + " est particpé par "+ festgr.getGroupe().getNom()  );
             
         ConnexionBdd.fermerConnexion(con);
     
-        }
+        }*/
+        
+        Festival gp = new Festival();
+        gp.setFest_nom("Camargue");
+        gp.setFest_dateDebut("2021-05-03");
+        gp.setFest_dateFin("2021-05-05");
+        gp.setFest_lieu("Paris");
+        
+        
+        
+        Festival leFestivalAInsere = DaoFestival.ajouterFestival(con, gp);
     }
  }
 
