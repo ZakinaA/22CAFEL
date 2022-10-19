@@ -82,6 +82,7 @@
         <tr>
             <th>Numéro</th>
             <th>Intitulé</th>
+            <th>Durée</th>
         </tr>
         </thead>
         <tbody>
@@ -95,6 +96,10 @@
                     
                     out.println("<td>");
                     out.println(unTitre.getIntitule());
+                    out.println("</td>");
+                    
+                    out.println("<td>");
+                    out.println(unTitre.getDuree());
                     out.println("</td>");
                     
                     

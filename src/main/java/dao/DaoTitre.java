@@ -50,6 +50,7 @@ public class DaoTitre {
                 leTitre.setNumero(rs.getInt("tit_numero"));
                 leTitre.setIntitule(rs.getString("tit_intitule"));
                 leTitre.setLienURL(rs.getString("tit_lienURL"));
+                leTitre.setDuree(rs.getString("tit_duree"));
 
                 lesTitres.add(leTitre);
             }
