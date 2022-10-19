@@ -1,10 +1,4 @@
-<%-- 
-    Document   : apropos
-    Created on : 19 oct. 2022, 10:02:01
-    Author     : sio2
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="../entete.jsp" %>
 <!DOCTYPE html>
 <html>
