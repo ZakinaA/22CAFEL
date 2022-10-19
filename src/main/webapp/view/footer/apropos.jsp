@@ -20,6 +20,6 @@
             
             
         </p>  
-    <%@include file="../pied.jsp"%>
     </body>
+    <%@include file="../pied.jsp"%>
 </html>
