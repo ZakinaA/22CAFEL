@@ -31,7 +31,7 @@ public class ConnexionBdd {
         }     
         try {
             //obtention de la connexion
-            connection= DriverManager.getConnection("jdbc:mariadb://172.20.177.250:3306/CAFEL","ADM_CAFEL","mpCafel");
+            connection= DriverManager.getConnection("jdbc:mariadb://172.20.177.250/CAFEL","ADM_CAFEL","mpCafel");
             System.out.println("Connexion OK");
            
         } catch (SQLException e) {
